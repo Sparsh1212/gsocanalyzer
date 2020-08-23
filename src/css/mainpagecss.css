@@ -1,0 +1,174 @@
+#mainContainer {
+  padding-top: 15px;
+  background-color: black;
+
+  font-family: monospace;
+  color: white;
+  width: 100%;
+}
+@media (max-width: 750px) {
+  #searchBox {
+    width: 65%;
+    height: 50px;
+    padding: 10px;
+    font-size: 30px;
+    border: 2px solid white;
+    background-color: black;
+    outline: none;
+    color: white;
+  }
+}
+@media (min-width: 750px) {
+  #searchBox {
+    width: 40%;
+    height: 70px;
+    padding: 10px;
+    font-size: 30px;
+    border: 2px solid white;
+    background-color: black;
+    outline: none;
+    color: white;
+  }
+}
+::placeholder {
+  color: white;
+  font-family: monospace;
+}
+@media (max-width: 750px) {
+  #mainHeader {
+    font-size: 50px;
+    font-family: monospace;
+    color: white;
+  }
+}
+
+@media (min-width: 750px) {
+  #mainHeader {
+    font-size: 70px;
+    font-family: monospace;
+    color: white;
+  }
+}
+@media (max-width: 750px) {
+  #searchFilter {
+    background-color: black;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    color: purple;
+    color: white;
+    padding: 10px;
+  }
+}
+@media (min-width: 750px) {
+  #searchFilter {
+    background-color: black;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: purple;
+    color: white;
+  }
+}
+
+@media (max-width: 750px) {
+  #card {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 750px) {
+  #card {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+}
+
+.family {
+  font-family: monospace;
+}
+
+@media (max-width: 750px) {
+  .graph {
+    width: 100%;
+    margin: 0 auto;
+    color: black !important;
+  }
+}
+
+@media (min-width: 750px) {
+  .graph {
+    width: 80%;
+    margin: 0 auto;
+    color: black !important;
+  }
+}
+@media (max-width: 750px) {
+  .search-btn {
+    background-color: black;
+    border: 2px solid white;
+    outline: none;
+
+    padding: 10px;
+    height: 50px;
+  }
+}
+@media (min-width: 750px) {
+  .search-btn {
+    background-color: black;
+    border: 2px solid white;
+    outline: none;
+    margin-right: 50px;
+    padding: 10px;
+    height: 70px;
+  }
+}
+#orgName {
+  font-size: 30;
+  text-align: center;
+  color: black;
+  background-color: burlywood;
+}
+
+#selectedTimes {
+  font-size: 50 !important;
+}
+
+a:not #urlLocator {
+  color: white;
+  text-decoration: none;
+}
+
+#footer {
+  width: 10000px;
+  margin-top: 70vh;
+  font-weight: 100;
+  padding: 20px;
+  background-color: black;
+}
+@media (max-width: 750px) {
+  #animatedText {
+    width: 80%;
+
+    margin: 30px 10%;
+    font-size: 15px;
+    text-align: center;
+    color: greenyellow;
+    font-weight: bold;
+    display: inline-block;
+  }
+}
+@media (min-width: 750px) {
+  #animatedText {
+    width: 80%;
+
+    margin: 30px 10%;
+    font-size: 35px;
+    text-align: center;
+    color: greenyellow;
+    font-weight: bold;
+    display: inline-block;
+  }
+}
