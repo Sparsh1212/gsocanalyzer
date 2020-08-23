@@ -10,7 +10,7 @@ const LaunchingComponent = () => {
         <div id='animatedText'>
           <p>
             A blazingly fast tool to get the past 11 year analytics of any
-            organisation selected in GSoc
+            organisation selected in GSoC
           </p>
           <Typist.Delay ms={200} />
           <p>Search by tech-stack / organisation name or by category</p>

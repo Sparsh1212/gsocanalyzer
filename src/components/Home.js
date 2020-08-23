@@ -52,7 +52,7 @@ const Home = () => {
     <React.Fragment>
       <Container id='mainContainer' fluid>
         <Header id='mainHeader' as='h1' textAlign='center'>
-          GSoC Analyser
+          GSoC Analyzer
         </Header>
 
         <AdvancedSearch buildSearchList={buildSearchList} />
