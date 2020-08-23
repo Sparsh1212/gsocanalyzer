@@ -3,7 +3,7 @@ import { Container, Dropdown } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faFilter } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const AdvancedSearch = (props) => {
   const { buildSearchList } = props;
   const searchFilterOptions = [
@@ -34,8 +34,7 @@ const AdvancedSearch = (props) => {
   const handleSearch = (e) => {
     e.preventDefault();
     document.activeElement.blur();
-    console.log(search);
-    console.log(filter);
+
     buildSearchList(search, filter);
   };
 
