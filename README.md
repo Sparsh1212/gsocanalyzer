@@ -4,7 +4,6 @@ GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call
 
 Having stated that, we bring to you our mini-project: ‘GSoC Analyser’, that has everything an applicant would need. Not only does it enable the search by tech-stack/organization/category/topics, but displays the number of times of its applications in GSoC to graphical analytics of its projects each year, & everything else under the sun, based on last 11-year analytics. 
 
-Our sole motivation to move ahead with this idea has been the tremendous stress & dilemma young developers face in selecting the right organization to contribute.
 
 ## Link to website: https://sparsh1212.github.io/gsocanalyzer/
 
