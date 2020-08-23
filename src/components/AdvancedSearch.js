@@ -22,6 +22,11 @@ const AdvancedSearch = (props) => {
       text: 'Category',
       value: 2,
     },
+    {
+      key: 3,
+      text: 'Topic',
+      value: 3,
+    },
   ];
 
   const [search, setSearch] = useState('');

@@ -6,11 +6,7 @@ import OrganisationCard from './OrganisationCard';
 import AdvancedSearch from './AdvancedSearch';
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHeart,
-  faCopyright,
-  faUser,
-} from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import LaunchingComponent from './LaunchingComponent';
 
 const Home = () => {
@@ -34,9 +30,20 @@ const Home = () => {
       setValidList(
         data.filter((org) => org.name.toLowerCase().includes(sanitisedSearch))
       );
-    } else {
+    } else if (filter === 2) {
       setValidList(
         data.filter((org) => org.cat.toLowerCase().includes(sanitisedSearch))
+      );
+    } else {
+      setValidList(
+        data.filter((org) => {
+          for (let i = 0; i < org.top.length; i++) {
+            if (org.top[i].toLowerCase() === sanitisedSearch) {
+              return true;
+            }
+          }
+          return false;
+        })
       );
     }
   };
@@ -60,8 +67,8 @@ const Home = () => {
               Search Results: {validList.length}
             </Header>
             <br />
-            {validList.map((org) => (
-              <OrganisationCard orgData={org} />
+            {validList.map((org, index) => (
+              <OrganisationCard key={index} orgData={org} />
             ))}
           </Container>
         )}
