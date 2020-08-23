@@ -1,4 +1,4 @@
-# GSoc Analyser
+# GSoC Analyser
 
 GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call it; has immense mystique surrounding it.Nurturing this dream, as many aspirants step in here, analyzing the right organizations to contribute becomes the most crucial step!
 
