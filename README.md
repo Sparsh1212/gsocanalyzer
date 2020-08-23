@@ -6,4 +6,6 @@ Having stated that, we bring to you our mini-project: ‘GSoC Analyser’, that 
 
 Our sole motivation to move ahead with this idea has been the tremendous stress & dilemma young developers face in selecting the right organization to contribute.
 
+## Link to website: https://sparsh1212.github.io/gsocanalyzer/
+
 ![1](./img.jpeg)
