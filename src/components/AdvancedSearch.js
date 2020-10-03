@@ -45,7 +45,7 @@ const AdvancedSearch = (props) => {
 
   return (
     <Container textAlign='center'>
-      <form>
+      <form class="search-form">
         <input
           id='searchBox'
           value={search}
