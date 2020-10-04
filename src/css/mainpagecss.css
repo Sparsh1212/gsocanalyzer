@@ -54,10 +54,10 @@
     background-color: black;
     outline: none;
     border: none;
-    font-size: 15px;
+    font-size: 20px;
     color: purple;
     color: white;
-    padding: 10px;
+    width: 75%;
   }
 }
 @media (min-width: 750px) {
@@ -105,6 +105,14 @@
     color: black !important;
   }
 }
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 750px) {
   .search-btn {
     background-color: black;
