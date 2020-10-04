@@ -9,6 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import LaunchingComponent from './LaunchingComponent';
 
+const descendingSortByYear = (resultList) =>{
+  return resultList.sort( (a,b) => { 
+      return (b.year.length - a.year.length)
+    });
+}
+
 const Home = () => {
   const [validList, setValidList] = useState([]);
   const [displayLauncher, setDisplayLauncher] = useState(true);
@@ -26,6 +32,7 @@ const Home = () => {
           return false;
         })
       );
+      
     } else if (filter === 1) {
       setValidList(
         data.filter((org) => org.name.toLowerCase().includes(sanitisedSearch))
@@ -67,7 +74,7 @@ const Home = () => {
               Search Results: {validList.length}
             </Header>
             <br />
-            {validList.map((org, index) => (
+            {descendingSortByYear(validList).map((org, index) => (
               <OrganisationCard key={index} orgData={org} />
             ))}
           </Container>
