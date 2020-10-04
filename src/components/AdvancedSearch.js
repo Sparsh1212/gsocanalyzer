@@ -1,47 +1,47 @@
-import React, { useState } from 'react';
-import { Container, Dropdown } from 'semantic-ui-react';
-import '../css/mainpagecss.css';
+import React, { useState } from 'react'
+import { Container, Dropdown } from 'semantic-ui-react'
+import '../css/mainpagecss.css'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-const AdvancedSearch = (props) => {
-  const { buildSearchList } = props;
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+const AdvancedSearch = props => {
+  const { buildSearchList } = props
   const searchFilterOptions = [
     {
       key: 0,
       text: 'Tech Stack',
-      value: 0,
+      value: 0
     },
     {
       key: 1,
       text: 'Organisation Name',
-      value: 1,
+      value: 1
     },
     {
       key: 2,
       text: 'Category',
-      value: 2,
+      value: 2
     },
     {
       key: 3,
       text: 'Topic',
-      value: 3,
-    },
-  ];
+      value: 3
+    }
+  ]
 
-  const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState(0);
+  const [search, setSearch] = useState('')
+  const [filter, setFilter] = useState(0)
 
   const handleFilter = (unNeccesaryThing, e) => {
-    setFilter(e.value);
-  };
+    setFilter(e.value)
+  }
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    document.activeElement.blur();
+  const handleSearch = e => {
+    e.preventDefault()
+    document.activeElement.blur()
 
-    buildSearchList(search, filter);
-  };
+    buildSearchList(search, filter)
+  }
 
   return (
     <Container textAlign='center'>
@@ -49,13 +49,13 @@ const AdvancedSearch = (props) => {
         <input
           id='searchBox'
           value={search}
-          onChange={(e) => {
+          onChange={e => {
             if (e.keyCode === 13) {
-              handleSearch();
-              return;
+              handleSearch()
+              return
             }
 
-            setSearch(e.target.value);
+            setSearch(e.target.value)
           }}
           type='text'
           name='search'
@@ -74,7 +74,7 @@ const AdvancedSearch = (props) => {
         />
       </form>
     </Container>
-  );
-};
+  )
+}
 
-export default AdvancedSearch;
+export default AdvancedSearch
