@@ -60,6 +60,18 @@ const OrganisationCard = (props) => {
             <Line
               data={graphData}
               height={isMobile ? 300 : 250}
+              options={{
+                maintainAspectRatio: false,
+                scales: {
+                  yAxes: [
+                    {
+                      ticks: {
+                        precision: 0,
+                      },
+                    },
+                  ],
+                },
+              }}
             />
           </div>
           <br />
