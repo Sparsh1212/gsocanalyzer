@@ -8,6 +8,7 @@ import TopTechTag from './TopTechTag';
 
 const OrganisationCard = (props) => {
   const { orgData } = props;
+  const isMobile = window.innerWidth <= 750;
   const graphData = {
     labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
     datasets: [
@@ -56,7 +57,10 @@ const OrganisationCard = (props) => {
             </div>
           </h3>
           <div className='graph'>
-            <Line data={graphData} />
+            <Line
+              data={graphData}
+              height={isMobile ? 300 : 250}
+            />
           </div>
           <br />
           <br />
