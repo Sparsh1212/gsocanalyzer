@@ -12,6 +12,29 @@ import LaunchingComponent from './LaunchingComponent';
 const Home = () => {
   const [validList, setValidList] = useState([]);
   const [displayLauncher, setDisplayLauncher] = useState(true);
+  function compareValues(key, order = 'asc') {
+    return function innerSort(a, b) {
+      if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+        // property doesn't exist on either object
+        return 0;
+      }
+  
+      const varA = (typeof a[key] === 'string')
+        ? a[key].toUpperCase() : a[key];
+      const varB = (typeof b[key] === 'string')
+        ? b[key].toUpperCase() : b[key];
+  
+      let comparison = 0;
+      if (varA > varB) {
+        comparison = 1;
+      } else if (varA < varB) {
+        comparison = -1;
+      }
+      return (
+        (order === 'desc') ? (comparison * -1) : comparison
+      );
+    };
+  }
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
     let sanitisedSearch = search.toLowerCase();
@@ -47,7 +70,28 @@ const Home = () => {
       );
     }
   };
-
+  const displayOrg = ()=>{
+  var index = [];
+  var orgCard = [];
+  for(var i=0;i<validList.length;i++)
+  {
+      if(validList[i])
+      {
+        index.push({
+          index:i,
+          length:validList[i].year.length
+        });
+      }
+  }
+  index = index.sort(compareValues('length','desc'));
+  for(var i=0;i<index.length;i++)
+  {
+    orgCard.push(
+      <OrganisationCard key={i} orgData={validList[index[i].index]}></OrganisationCard>
+    )
+  }
+  return orgCard;
+  }
   return (
     <React.Fragment>
       <Container id='mainContainer' fluid>
@@ -67,9 +111,7 @@ const Home = () => {
               Search Results: {validList.length}
             </Header>
             <br />
-            {validList.map((org, index) => (
-              <OrganisationCard key={index} orgData={org} />
-            ))}
+            {displayOrg()}
           </Container>
         )}
         <ScrollUpButton style={{ color: 'white' }} />
