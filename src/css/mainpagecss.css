@@ -180,3 +180,12 @@ a:not #urlLocator {
     display: inline-block;
   }
 }
+
+.visitUrl{
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: gray;
+}
