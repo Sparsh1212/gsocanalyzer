@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Label } from 'semantic-ui-react';
+import { Button, Card, Label } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
@@ -76,12 +76,9 @@ const OrganisationCard = (props) => {
           </div>
           <br />
           <br />
-          <Label color='grey' size='medium' attached='bottom right'>
-            <a id='urlLocator' target='_blank' href={orgData.url}>
-              Visit Official Page
-            </a>{' '}
-            <FontAwesomeIcon icon={faBolt} />
-          </Label>
+          <form action={orgData.url}>
+              <input className="visitUrl" type="submit" value="Visit official page" />
+          </form>
         </Card.Description>
       </Card.Content>
     </Card>
