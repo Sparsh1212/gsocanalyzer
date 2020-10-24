@@ -76,7 +76,7 @@ const OrganisationCard = (props) => {
           </div>
           <br />
           <br />
-          <form action={orgData.url}>
+          <form target="_blank" action={orgData.url}>
               <input className="visitUrl" type="submit" value="Visit official page" />
           </form>
         </Card.Description>
