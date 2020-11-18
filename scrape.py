@@ -6,7 +6,7 @@ import json
 base="https://summerofcode.withgoogle.com"
 data=[]
 
-for year in range(2016,2021):
+for year in reversed(range(2016,2021)):
   url="https://summerofcode.withgoogle.com/archive/"+str(year)+'/organizations/'
   pg=requests.get(url)
   soup=BeautifulSoup(pg.content,'html5lib')
@@ -46,7 +46,7 @@ for year in range(2016,2021):
       dic['proj']=[len(proj)]
       data.append(dic)
 
-for year in range(2009,2016):
+for year in reversed(range(2009,2016)):
   url="https://www.google-melange.com/archive/gsoc/"+str(year)
   base="https://www.google-melange.com"
   pg=requests.get(url)
