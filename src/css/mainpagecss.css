@@ -6,6 +6,15 @@
   color: white;
   width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+  #mainContainer {
+    margin: 0!important;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+}
+
 @media (max-width: 750px) {
   #searchBox {
     width: 65%;
