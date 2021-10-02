@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/gsocanalyzer/static/css/main.090867d7.chunk.css",
-    "main.js": "/gsocanalyzer/static/js/main.50798ed6.chunk.js",
-    "main.js.map": "/gsocanalyzer/static/js/main.50798ed6.chunk.js.map",
+    "main.css": "/gsocanalyzer/static/css/main.c4693b89.chunk.css",
+    "main.js": "/gsocanalyzer/static/js/main.107814d5.chunk.js",
+    "main.js.map": "/gsocanalyzer/static/js/main.107814d5.chunk.js.map",
     "runtime-main.js": "/gsocanalyzer/static/js/runtime-main.d0b9eb21.js",
     "runtime-main.js.map": "/gsocanalyzer/static/js/runtime-main.d0b9eb21.js.map",
-    "static/css/2.7e524b05.chunk.css": "/gsocanalyzer/static/css/2.7e524b05.chunk.css",
-    "static/js/2.792a049b.chunk.js": "/gsocanalyzer/static/js/2.792a049b.chunk.js",
-    "static/js/2.792a049b.chunk.js.map": "/gsocanalyzer/static/js/2.792a049b.chunk.js.map",
+    "static/css/2.35da5cfa.chunk.css": "/gsocanalyzer/static/css/2.35da5cfa.chunk.css",
+    "static/js/2.b39e3735.chunk.js": "/gsocanalyzer/static/js/2.b39e3735.chunk.js",
+    "static/js/2.b39e3735.chunk.js.map": "/gsocanalyzer/static/js/2.b39e3735.chunk.js.map",
     "index.html": "/gsocanalyzer/index.html",
-    "precache-manifest.b0030d3d9b076e7d0de4bd3e67b7f4af.js": "/gsocanalyzer/precache-manifest.b0030d3d9b076e7d0de4bd3e67b7f4af.js",
+    "precache-manifest.76f9db48ec4ccbdd0c94e2ac920aa55c.js": "/gsocanalyzer/precache-manifest.76f9db48ec4ccbdd0c94e2ac920aa55c.js",
     "service-worker.js": "/gsocanalyzer/service-worker.js",
-    "static/css/2.7e524b05.chunk.css.map": "/gsocanalyzer/static/css/2.7e524b05.chunk.css.map",
-    "static/css/main.090867d7.chunk.css.map": "/gsocanalyzer/static/css/main.090867d7.chunk.css.map",
-    "static/js/2.792a049b.chunk.js.LICENSE.txt": "/gsocanalyzer/static/js/2.792a049b.chunk.js.LICENSE.txt",
+    "static/css/2.35da5cfa.chunk.css.map": "/gsocanalyzer/static/css/2.35da5cfa.chunk.css.map",
+    "static/css/main.c4693b89.chunk.css.map": "/gsocanalyzer/static/css/main.c4693b89.chunk.css.map",
+    "static/js/2.b39e3735.chunk.js.LICENSE.txt": "/gsocanalyzer/static/js/2.b39e3735.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/gsocanalyzer/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.d0b9eb21.js",
-    "static/css/2.7e524b05.chunk.css",
-    "static/js/2.792a049b.chunk.js",
-    "static/css/main.090867d7.chunk.css",
-    "static/js/main.50798ed6.chunk.js"
+    "static/css/2.35da5cfa.chunk.css",
+    "static/js/2.b39e3735.chunk.js",
+    "static/css/main.c4693b89.chunk.css",
+    "static/js/main.107814d5.chunk.js"
   ]
 }
