@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Dropdown } from 'semantic-ui-react'
 import '../css/mainpagecss.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
+import data from '../data/finalData.json'
+import AutoComplete from '../utils/AutoComplete'
+
 const AdvancedSearch = props => {
   const { buildSearchList } = props
+  let inputElement;
   const searchFilterOptions = [
     {
       key: 0,
@@ -31,36 +36,106 @@ const AdvancedSearch = props => {
 
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState(0)
+  const [autoComplete, setAutoComplete] = useState(null)
+  const [suggestions, setSuggestions] = useState([])
+  const [isInputInFocus, setIsInputInFocus] = useState(false)
 
   const handleFilter = (unNeccesaryThing, e) => {
     setFilter(e.value)
   }
 
   const handleSearch = e => {
-    e.preventDefault()
+    e && e.preventDefault()
     document.activeElement.blur()
-
     buildSearchList(search, filter)
   }
 
+  const focusHandler = e => {
+    // setSuggestions(autoComplete.suggest(search))
+    setTimeout(() => {
+      setIsInputInFocus(document.activeElement === inputElement)
+    }, 0);
+  }
+
+  useEffect(() => {
+    document.body.addEventListener('click', focusHandler)
+    inputElement = document.getElementById('inputBox')
+    return () => {
+      document.body.removeEventListener('click', focusHandler)
+    }
+  }, [])
+
+  useEffect(() => {
+    let list = []
+    if (filter === 0) {
+      let dataSet = new Set();
+      data.forEach(e => {
+        dataSet.add(...e.tech)
+      })
+      list = [...[...dataSet].sort((a, b) => (a - b))]
+    }
+    if (filter === 1) {
+      data.forEach(e => {
+        list.push(e.name.replaceAll('/', '').replaceAll('  ', ' ').toLowerCase())
+      })
+    }
+    if (filter === 2) {
+      data.forEach(e => {
+        list.push(e.cat.replaceAll('/', '').replaceAll('  ', ' ').toLowerCase())
+      })
+    }
+    if (filter === 3) {
+      let dataSet = new Set();
+      data.forEach(e => {
+        dataSet.add(...e.top)
+      })
+      list = [...[...dataSet].sort((a, b) => (a - b))]
+    }
+    setAutoComplete(new AutoComplete(list))
+    setSuggestions([])
+    setSearch('')
+  }, [filter])
+
+  useEffect(() => {
+    autoComplete && setSuggestions(autoComplete.suggest(''))
+  }, [autoComplete])
+
+  useEffect(() => {
+    autoComplete && setSuggestions(autoComplete.suggest(search))
+  }, [search])
+
   return (
     <Container textAlign='center'>
-      <form className="search-form">
-        <input
-          id='searchBox'
-          value={search}
-          onChange={e => {
-            if (e.keyCode === 13) {
-              handleSearch()
-              return
-            }
-
-            setSearch(e.target.value)
-          }}
-          type='text'
-          name='search'
-          placeholder='Search..'
-        />
+      <form className="search-form" autocomplete="off">
+        <div id='searchBox'>
+          <input
+            value={search}
+            onChange={e => {
+              if (e.keyCode === 13) {
+                handleSearch()
+                return
+              }
+              setSearch(e.target.value.toLowerCase())
+            }}
+            type='text'
+            name='search'
+            placeholder='Search..'
+            id="inputBox"
+            autocomplete="off"
+          />
+          {
+            (isInputInFocus && suggestions.length > 0 && suggestions[0] !== search) && (<div className="suggestions-dropDown">
+              {suggestions.map(content => (
+                content !== search && <p
+                  key={content}
+                  onClick={() => {
+                    setSearch(content)
+                    buildSearchList(content, filter)
+                  }}>{content}</p>
+              ))}
+            </div>)
+          }
+        </div>
         <button type='submit' onClick={handleSearch} className='search-btn'>
           <FontAwesomeIcon color='white' className='fa-2x' icon={faSearch} />{' '}
         </button>
@@ -72,6 +147,7 @@ const AdvancedSearch = props => {
           selection
           options={searchFilterOptions}
         />
+
       </form>
     </Container>
   )

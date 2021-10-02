@@ -7,9 +7,40 @@
   width: 100%;
 }
 
+.suggestions-dropDown {
+  text-align: left;
+  position: absolute;
+  background: #000000c2;
+  border: 0.01px solid;
+  backdrop-filter: blur(2px);
+  z-index: 99;
+  max-height: 70vh;
+  max-width: 68vw;
+  width: 500px;
+  overflow-y: scroll;
+  border-top: none;
+}
+
+
+
+.suggestions-dropDown::-webkit-scrollbar-thumb {
+  background-color: greenyellow;
+  border-radius: 20px;
+}
+
+.suggestions-dropDown p {
+  margin: 25px 50px !important;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.suggestions-dropDown p:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 768px) {
   #mainContainer {
-    margin: 0!important;
+    margin: 0 !important;
     padding-left: 1.2em;
     padding-right: 1.2em;
   }
@@ -18,6 +49,10 @@
 @media (max-width: 750px) {
   #searchBox {
     width: 65%;
+  }
+
+  #searchBox input {
+    width: 100%;
     height: 50px;
     padding: 10px;
     font-size: 30px;
@@ -27,9 +62,14 @@
     color: white;
   }
 }
+
 @media (min-width: 750px) {
   #searchBox {
-    width: 40%;
+    width: 60%;
+  }
+
+  #searchBox input {
+    width: 100%;
     height: 70px;
     padding: 10px;
     font-size: 30px;
@@ -39,10 +79,12 @@
     color: white;
   }
 }
+
 ::placeholder {
   color: white;
   font-family: monospace;
 }
+
 @media (max-width: 750px) {
   #mainHeader {
     font-size: 50px;
@@ -58,6 +100,7 @@
     color: white;
   }
 }
+
 @media (max-width: 750px) {
   #searchFilter {
     background-color: black;
@@ -69,6 +112,7 @@
     width: 75%;
   }
 }
+
 @media (min-width: 750px) {
   #searchFilter {
     background-color: black;
@@ -87,6 +131,7 @@
     margin-bottom: 50px;
   }
 }
+
 @media (min-width: 750px) {
   #card {
     width: 40%;
@@ -132,6 +177,7 @@
     height: 50px;
   }
 }
+
 @media (min-width: 750px) {
   .search-btn {
     background-color: black;
@@ -142,6 +188,7 @@
     height: 70px;
   }
 }
+
 #orgName {
   font-size: 30;
   text-align: center;
@@ -165,6 +212,7 @@ a:not #urlLocator {
   padding: 20px;
   background-color: black;
 }
+
 @media (max-width: 750px) {
   #animatedText {
     width: 80%;
@@ -177,6 +225,7 @@ a:not #urlLocator {
     display: inline-block;
   }
 }
+
 @media (min-width: 750px) {
   #animatedText {
     width: 80%;
@@ -190,7 +239,7 @@ a:not #urlLocator {
   }
 }
 
-.visitUrl{
+.visitUrl {
   outline: none;
   border: none;
   padding: 10px;
