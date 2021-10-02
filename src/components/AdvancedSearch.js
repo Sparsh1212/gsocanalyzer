@@ -51,6 +51,7 @@ const AdvancedSearch = props => {
   }
 
   const focusHandler = e => {
+    // setSuggestions(autoComplete.suggest(search))
     setTimeout(() => {
       setIsInputInFocus(document.activeElement === inputElement)
     }, 0);
@@ -71,7 +72,7 @@ const AdvancedSearch = props => {
       data.forEach(e => {
         dataSet.add(...e.tech)
       })
-      list.push(...[...dataSet].sort((a, b) => (a - b)))
+      list = [...[...dataSet].sort((a, b) => (a - b))]
     }
     if (filter === 1) {
       data.forEach(e => {
@@ -88,13 +89,16 @@ const AdvancedSearch = props => {
       data.forEach(e => {
         dataSet.add(...e.top)
       })
-      list.push(...[...dataSet].sort((a, b) => (a - b)))
+      list = [...[...dataSet].sort((a, b) => (a - b))]
     }
     setAutoComplete(new AutoComplete(list))
     setSuggestions([])
     setSearch('')
-
   }, [filter])
+
+  useEffect(() => {
+    autoComplete && setSuggestions(autoComplete.suggest(''))
+  }, [autoComplete])
 
   useEffect(() => {
     autoComplete && setSuggestions(autoComplete.suggest(search))
@@ -102,7 +106,7 @@ const AdvancedSearch = props => {
 
   return (
     <Container textAlign='center'>
-      <form className="search-form">
+      <form className="search-form" autocomplete="off">
         <div id='searchBox'>
           <input
             value={search}
@@ -117,17 +121,20 @@ const AdvancedSearch = props => {
             name='search'
             placeholder='Search..'
             id="inputBox"
+            autocomplete="off"
           />
-          <div className="suggestions-dropDown">
-            {isInputInFocus && suggestions.map(content => (
-              content !== search && <p
-                key={content}
-                onClick={() => {
-                  setSearch(content)
-                  buildSearchList(content, filter)
-                }}>{content}</p>
-            ))}
-          </div>
+          {
+            (isInputInFocus && suggestions.length > 0 && suggestions[0] !== search) && (<div className="suggestions-dropDown">
+              {suggestions.map(content => (
+                content !== search && <p
+                  key={content}
+                  onClick={() => {
+                    setSearch(content)
+                    buildSearchList(content, filter)
+                  }}>{content}</p>
+              ))}
+            </div>)
+          }
         </div>
         <button type='submit' onClick={handleSearch} className='search-btn'>
           <FontAwesomeIcon color='white' className='fa-2x' icon={faSearch} />{' '}

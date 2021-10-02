@@ -7,10 +7,6 @@
   width: 100%;
 }
 
-#searchBox {
-  width: 48%;
-}
-
 .suggestions-dropDown {
   text-align: left;
   position: absolute;
@@ -22,21 +18,10 @@
   max-width: 68vw;
   width: 500px;
   overflow-y: scroll;
+  border-top: none;
 }
 
-/* 
-.suggestions-dropDown::-webkit-scrollbar-track {
-  color: white;
-} */
 
-.suggestions-dropDown::-webkit-scrollbar {
-  width: 5px;
-}
-
-.suggestions-dropDown::-webkit-scrollbar-track {
-  /* background: white; */
-  /* color of the tracking area */
-}
 
 .suggestions-dropDown::-webkit-scrollbar-thumb {
   background-color: greenyellow;
@@ -80,7 +65,7 @@
 
 @media (min-width: 750px) {
   #searchBox {
-    width: 65%;
+    width: 60%;
   }
 
   #searchBox input {
