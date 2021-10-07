@@ -119,7 +119,7 @@ const AdvancedSearch = props => {
             }}
             type='text'
             name='search'
-            placeholder='Search..'
+            placeholder='Search...'
             id="inputBox"
             autocomplete="off"
           />
