@@ -6,8 +6,16 @@ GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call
 
 ## Link to website: https://sparsh1212.github.io/gsocanalyzer/
 
+
+###Home Page
+![1](./homePage.png)
+
+###Search by organisation name
+![1](./mainPage1.png)
+
+###Search by tech-stack
 ![1](./mainPage2.png)
-![1](./mainPage.png)
+
 
 
 # Contributing :
