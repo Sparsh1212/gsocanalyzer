@@ -11,10 +11,10 @@ GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call
 ![1](./homePage.png)
 
 ### Search by organisation name
-![1](./mainPage1.png)
+![1](./searchByOrganisation.png)
 
 ### Search by tech-stack
-![1](./mainPage2.png)
+![1](./searchByTechStack.png)
 
 
 
