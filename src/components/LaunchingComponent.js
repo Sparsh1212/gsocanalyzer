@@ -9,12 +9,12 @@ const LaunchingComponent = () => {
       <Typist avgTypingDelay={20} cursor={{ show: false }}>
         <div id='animatedText'>
           <p>
-            A blazingly fast tool to get the past 12 year analytics of any
-            organisation selected in GSoC
+            A blazingly fast tool to get the past 12 year analytics of
+            organizations selected in GSoC
           </p>
           <Typist.Delay ms={150} />
           <p>Search by tech-stack / organisation name / category or by topic.</p>
-          <Typist.Delay ms={200} /> 
+          <Typist.Delay ms={200} />
           <p>Start Searching now!</p>
         </div>
       </Typist>
