@@ -16,7 +16,11 @@ GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call
 ### Search by tech-stack
 ![1](./searchByTechStack.png)
 
-
+# Setup:
+- Clone the repo
+- cd into the repo directory
+- Run: `npm install`
+- Run: `npm start`
 
 # Contributing :
 
