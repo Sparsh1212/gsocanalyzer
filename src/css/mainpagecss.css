@@ -246,4 +246,5 @@ a:not #urlLocator {
   font-weight: bold;
   color: white;
   background-color: gray;
+  cursor: pointer;
 }

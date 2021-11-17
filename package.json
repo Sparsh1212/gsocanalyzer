@@ -46,5 +46,16 @@
   "homepage": "http://Sparsh1212.github.io/gsocanalyzer",
   "devDependencies": {
     "gh-pages": "^3.1.0"
+  },
+  "description": "GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call it; has immense mystique surrounding it.Nurturing this dream, as many aspirants step in here, analyzing the right organizations to contribute becomes the most crucial step!",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NamitaChoudhary/gsocanalyzer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NamitaChoudhary/gsocanalyzer/issues"
   }
 }
