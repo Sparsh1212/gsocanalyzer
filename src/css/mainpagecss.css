@@ -247,3 +247,7 @@ a:not #urlLocator {
   color: white;
   background-color: gray;
 }
+
+.changeCursor{
+   cursor: pointer;
+}

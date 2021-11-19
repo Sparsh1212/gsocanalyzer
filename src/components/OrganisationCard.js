@@ -77,7 +77,7 @@ const OrganisationCard = (props) => {
           <br />
           <br />
           <form target="_blank" action={orgData.url}>
-              <input className="visitUrl" type="submit" value="Visit official page" />
+              <input className="visitUrl changeCursor" type="submit" value="Visit official page" />
           </form>
         </Card.Description>
       </Card.Content>
