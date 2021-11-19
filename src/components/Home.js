@@ -6,7 +6,7 @@ import OrganisationCard from './OrganisationCard';
 import AdvancedSearch from './AdvancedSearch';
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
 import LaunchingComponent from './LaunchingComponent';
-import Footer from './footer';
+import Footer from './Footer';
 
 const descendingSortByYear = (resultList) =>{
   return resultList.sort( (a,b) => { 
