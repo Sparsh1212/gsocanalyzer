@@ -10,7 +10,7 @@ const OrganisationCard = (props) => {
   const { orgData } = props;
   const isMobile = window.innerWidth <= 750;
   const graphData = {
-    labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
+    labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
     datasets: [
       {
         label: 'No. of Projects',
