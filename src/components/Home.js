@@ -18,6 +18,19 @@ const descendingSortByYear = (resultList) =>{
 const Home = () => {
   const [validList, setValidList] = useState([]);
   const [displayLauncher, setDisplayLauncher] = useState(true);
+
+  const RerenderLauncher = () => {
+    setDisplayLauncher(true);
+    setValidList([]);
+    document.getElementById("inputBox").blur();
+    document.getElementById("inputBox").value = '';
+    return(
+      <React.Fragment>
+        <LaunchingComponent />
+      </React.Fragment>
+    );
+  };
+
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
     let sanitisedSearch = search.toLowerCase();
@@ -58,8 +71,10 @@ const Home = () => {
   return (
     <React.Fragment>
       <Container id='mainContainer' fluid>
-        <Header id='mainHeader' as='h1' textAlign='center'>
-          GSoC Analyzer
+        <Header textAlign='center'>        
+          <div id='mainHeaderDiv' onClick={RerenderLauncher}>
+            <h1  id='mainHeader'> GSoC Analyser</h1>
+          </div>
         </Header>
 
         <AdvancedSearch buildSearchList={buildSearchList} />
