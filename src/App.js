@@ -22,7 +22,7 @@ function App() {
     <React.Fragment>
         <Router>
         <Routes>
-          <Route path='/' element={<Home bookmarked={bookmarked} setBookmarked={setBookmarked} />} />
+          <Route path='/gsocanalyzer' element={<Home bookmarked={bookmarked} setBookmarked={setBookmarked} />} />
           <Route path='/bookmarks' element={<Bookmarked bookmarked={bookmarked} setBookmarked={setBookmarked} />} />
         </Routes>
         </Router>
