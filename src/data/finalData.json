@@ -3,18 +3,35 @@
         "url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5129526253715456/",
         "name": "52\u00b0 North GmbH",
         "tech": [
-            "java",
-            "android",
             "javascript",
-            "python",
-            "react",
+            "java",
             "ogc standards",
-            "web services"
+            "web services",
+            "web",
+            "spring",
+            "r",
+            "big data",
+            "android",
+            "python",
+            "react"
         ],
         "cat": "Science and Medicine",
         "top": [
-            "web services",
+            "spatial data",
+            "sensor web",
+            "web-based geoprocessing",
+            "earth observation",
+            "geoinformatics",
+            "spatial data infrastructures",
+            "spatial information",
+            "geoprocessing",
+            "remote sensing",
+            "geostatistics",
+            "ogc",
+            "web processing",
+            "sensorweb",
             "floating car data",
+            "web services",
             "ogc standards",
             "trajectory analytics",
             "spatial information infrastructures",
@@ -23,8 +40,12 @@
             "geoinformation systems"
         ],
         "year": [
-            2021,
-            2020
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021
         ],
         "project": [
             0,
@@ -34,10 +55,10 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
+            3,
+            1,
+            1,
+            2,
             3,
             3
         ]
@@ -10209,8 +10230,10 @@
         "year": [
             2021,
             2020,
+            2019,
             2018,
-            2017
+            2017,
+            2016
         ],
         "project": [
             0,
@@ -10220,54 +10243,12 @@
             0,
             0,
             0,
-            0,
+            3,
             10,
             10,
-            0,
+            17,
             18,
             18
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6331236958601216/",
-        "name": "52\u00b0North Initiative for Geospatial Open Source Software GmbH",
-        "tech": [
-            "javascript",
-            "android",
-            "web",
-            "java"
-        ],
-        "cat": "Science and Medicine",
-        "top": [
-            "ogc",
-            "web processing",
-            "sensorweb",
-            "floating car data",
-            "earth observation"
-        ],
-        "year": [
-            2019,
-            2017,
-            2016,
-            2015,
-            2014,
-            2013,
-            2012
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            4,
-            4,
-            4,
-            6,
-            3,
-            1,
-            0,
-            2,
-            0,
-            0
         ]
     },
     {
@@ -13302,44 +13283,6 @@
         ]
     },
     {
-        "url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4652389204754432/",
-        "name": "Zulip Open Source Project",
-        "tech": [
-            "python",
-            "react native",
-            "django",
-            "javascript",
-            "electron"
-        ],
-        "cat": "Social / Communications",
-        "top": [
-            "bots",
-            "mobile",
-            "visual design",
-            "chat",
-            "great developer tooling"
-        ],
-        "year": [
-            2019,
-            2016
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            3,
-            0,
-            0,
-            17,
-            0,
-            0
-        ]
-    },
-    {
         "url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5486812028469248/",
         "name": "ZynAddSubFX",
         "tech": [
@@ -13408,43 +13351,6 @@
             0,
             0,
             2,
-            0,
-            0,
-            0
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5067792839606272/",
-        "name": "52\u00b0 North Initiative for Geospatial Open Source Software GmbH",
-        "tech": [
-            "javascript",
-            "java",
-            "spring",
-            "r",
-            "big data"
-        ],
-        "cat": "Science and Medicine",
-        "top": [
-            "geoinformatics",
-            "geoprocessing",
-            "remote sensing",
-            "geostatistics",
-            "sensor web"
-        ],
-        "year": [
-            2018
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            1,
             0,
             0,
             0
