@@ -90,6 +90,7 @@
     font-size: 50px;
     font-family: monospace;
     color: white;
+    cursor: pointer;
   }
 }
 
@@ -98,6 +99,7 @@
     font-size: 70px;
     font-family: monospace;
     color: white;
+    cursor: pointer;
   }
 }
 
