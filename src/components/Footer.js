@@ -29,6 +29,7 @@ const Footer = () => {
                     Rishabh
                 </a>
             </h3>
+             <button className="clear-storage-btn" onClick={() => {localStorage.clear(); window.location.reload()}}>Clear Local Storage</button>
         </Container>
     );
 }

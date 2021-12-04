@@ -21,6 +21,64 @@
   border-top: none;
 }
 
+.bookmark-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.bookmark-icon :hover {
+  transform: translateY(-4px);
+}
+
+.bookmarked-icon {
+  height: 50px;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: bolder;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-button :hover {
+  color: greenyellow;
+}
+
+.nav-button :active {
+  transform: translateY(4px);
+}
+
+.clear-storage-btn {
+  position: absolute;
+  bottom: 85px;
+  left: 50px;
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: bolder;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.no-bookmarks-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  width: 100%;
+  color: greenyellow;
+}
 
 
 .suggestions-dropDown::-webkit-scrollbar-thumb {
@@ -206,6 +264,7 @@ a:not #urlLocator {
 }
 
 #footer {
+  position: relative;
   width: 10000px;
   margin-top: 70vh;
   font-weight: 100;

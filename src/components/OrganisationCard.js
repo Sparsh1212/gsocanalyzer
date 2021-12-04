@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Button, Card, Label } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { Line } from 'react-chartjs-2';
 import TopTechTag from './TopTechTag';
+import bookmarkedIcon from './bookmarked.svg'
+import notBookmarkedIcon from './not-bookmarked.svg'
 
-const OrganisationCard = (props) => {
-  const { orgData } = props;
+const OrganisationCard = ({key, orgData, bookmarked, setBookmarked}) => {  
   const isMobile = window.innerWidth <= 750;
   const graphData = {
     labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
@@ -23,6 +24,17 @@ const OrganisationCard = (props) => {
     ],
   };
 
+  async function unBook() {
+    var array = bookmarked;
+    for(var i = 0; i < array.length; i++) {
+      if(array[i].name === orgData.name) {
+        array.splice(i, 1);
+        break;
+      }
+    }
+    setBookmarked([...array]);
+  }
+
   return (
     <Card id='card'>
       <Card.Content>
@@ -34,6 +46,12 @@ const OrganisationCard = (props) => {
             No. of times in GSoC:{' '}
             <span id='selectedTimes'>{orgData.year.length}</span>{' '}
           </h1>
+          { !bookmarked.includes(orgData) ?
+            <img className="bookmark-icon" src={notBookmarkedIcon} onClick={() => {setBookmarked([...bookmarked, orgData]);}} title="Add Bookmark"/>
+          : 
+            <img className="bookmark-icon bookmarked-icon" src={bookmarkedIcon} onClick={() => {unBook()}} title="Delete Bookmark"/>
+          }
+
 
           <h3 className='family'>
             Category: {orgData.cat != '' ? orgData.cat : 'Others'}
