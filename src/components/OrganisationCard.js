@@ -1,8 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import { Button, Card, Label } from 'semantic-ui-react';
+import React from 'react';
+import { Card } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { Line } from 'react-chartjs-2';
 import TopTechTag from './TopTechTag';
 import bookmarkedIcon from './bookmarked.svg'

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React from 'react'
 import { Container, Header } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import Footer from './Footer';
