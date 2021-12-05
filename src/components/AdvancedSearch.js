@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { forwardRef, useEffect, useState } from 'react'
 import { Container, Dropdown } from 'semantic-ui-react'
 import '../css/mainpagecss.css'
 
@@ -8,7 +8,10 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import data from '../data/finalData.json'
 import AutoComplete from '../utils/AutoComplete'
 
-const AdvancedSearch = props => {
+const { useImperativeHandle } = React;
+
+
+const AdvancedSearch = forwardRef((props, ref) => {
   const { buildSearchList } = props
   let inputElement;
   const searchFilterOptions = [
@@ -39,6 +42,17 @@ const AdvancedSearch = props => {
   const [autoComplete, setAutoComplete] = useState(null)
   const [suggestions, setSuggestions] = useState([])
   const [isInputInFocus, setIsInputInFocus] = useState(false)
+
+  useImperativeHandle(ref, () => ({
+    resetSearchState () {
+      console.log("YAYYYY!!!!!!");
+      setSearch('');
+      setFilter(0);
+      setAutoComplete(null);
+      setSuggestions([]);
+      setIsInputInFocus(false);
+    }
+  }));
 
   const handleFilter = (unNeccesaryThing, e) => {
     setFilter(e.value)
@@ -151,6 +165,6 @@ const AdvancedSearch = props => {
       </form>
     </Container>
   )
-}
+});
 
 export default AdvancedSearch

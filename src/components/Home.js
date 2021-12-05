@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Container, Header } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import data from '../data/finalData.json';
@@ -19,15 +19,9 @@ const Home = () => {
   const [displayLauncher, setDisplayLauncher] = useState(true);
 
   const reRenderLauncher = () => {
-    setDisplayLauncher(true);
+    AdvancedSearchRef.current.resetSearchState();
     setValidList([]);
-    document.getElementById("inputBox").blur();
-    document.getElementById("inputBox").value = '';
-    return (
-      <React.Fragment>
-        <LaunchingComponent />
-      </React.Fragment>
-    );
+    setDisplayLauncher(true);
   };
 
   const buildSearchList = (search, filter) => {
@@ -67,6 +61,8 @@ const Home = () => {
     }
   };
 
+  const AdvancedSearchRef = useRef();
+
   return (
     <React.Fragment>
       <Container id='mainContainer' fluid>
@@ -76,7 +72,7 @@ const Home = () => {
           </div>
         </Header>
 
-        <AdvancedSearch buildSearchList={buildSearchList} />
+        <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />
         {displayLauncher && <LaunchingComponent />}
         {!displayLauncher && (
           <Container fluid style={{ paddingTop: 50 }}>
