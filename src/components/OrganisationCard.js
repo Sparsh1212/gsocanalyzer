@@ -1,8 +1,6 @@
 import React from 'react';
-import { Button, Card, Label } from 'semantic-ui-react';
+import { Card} from 'semantic-ui-react';
 import '../css/mainpagecss.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { Line } from 'react-chartjs-2';
 import TopTechTag from './TopTechTag';
 
@@ -10,7 +8,7 @@ const OrganisationCard = (props) => {
   const { orgData } = props;
   const isMobile = window.innerWidth <= 750;
   const graphData = {
-    labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
+    labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
     datasets: [
       {
         label: 'No. of Projects',
