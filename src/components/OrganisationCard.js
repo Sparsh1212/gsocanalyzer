@@ -12,7 +12,7 @@ const OrganisationCard = (props) => {
     datasets: [
       {
         label: 'No. of Projects',
-        data: orgData.project,
+        data: [...orgData.project],
         borderColor: '#99A3A4',
         backgroundColor: '#F2F4F4',
         pointBorderColor: '#17202A',
