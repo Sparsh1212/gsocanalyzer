@@ -7,6 +7,7 @@ import AdvancedSearch from './AdvancedSearch';
 import Footer from './Footer';
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
 import LaunchingComponent from './LaunchingComponent';
+import { Link } from 'react-router-dom'
 
 const descendingSortByYear = (resultList) =>{
   return resultList.sort( (a,b) => { 
@@ -14,7 +15,7 @@ const descendingSortByYear = (resultList) =>{
     });
 }
 
-const Home = () => {
+const Home = ({bookmarked, setBookmarked}) => {
   const [validList, setValidList] = useState([]);
   const [displayLauncher, setDisplayLauncher] = useState(true);
 
@@ -69,6 +70,7 @@ const Home = () => {
         <Header textAlign='center'>
           <h1 id = 'mainHeader' onClick={reRenderLauncher}> GSoC Analyser </h1>
         </Header>
+        <Link to="/bookmarks" className="nav-button">Bookmarks</Link>
 
         <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />
         {displayLauncher && <LaunchingComponent />}
@@ -83,7 +85,7 @@ const Home = () => {
             </Header>
             <br />
             {descendingSortByYear(validList).map((org, index) => (
-              <OrganisationCard key={index} orgData={org} />
+              <OrganisationCard key={index} orgData={org} bookmarked={bookmarked} setBookmarked={setBookmarked} />
             ))}
           </Container>
         )}
