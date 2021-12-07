@@ -91,6 +91,8 @@
     font-family: monospace;
     color: white;
     cursor: pointer;
+    width: fit-content;
+    margin: 0 auto;
   }
 }
 
@@ -100,6 +102,8 @@
     font-family: monospace;
     color: white;
     cursor: pointer;
+    width: fit-content;
+    margin: 0 auto;
   }
 }
 

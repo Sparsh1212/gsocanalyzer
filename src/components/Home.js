@@ -67,9 +67,7 @@ const Home = () => {
     <React.Fragment>
       <Container id='mainContainer' fluid>
         <Header textAlign='center'>
-          <div id='mainHeaderDiv' onClick={reRenderLauncher}>
-            <h1 id = 'mainHeader'> GSoC Analyser</h1>
-          </div>
+          <h1 id = 'mainHeader' onClick={reRenderLauncher}> GSoC Analyser </h1>
         </Header>
 
         <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />

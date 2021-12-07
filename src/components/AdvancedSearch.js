@@ -45,7 +45,6 @@ const AdvancedSearch = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     resetSearchState () {
-      console.log("YAYYYY!!!!!!");
       setSearch('');
       setFilter(0);
       setAutoComplete(null);
