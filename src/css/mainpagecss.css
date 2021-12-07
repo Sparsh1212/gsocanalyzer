@@ -1,7 +1,6 @@
 #mainContainer {
   padding-top: 15px;
   background-color: black;
-
   font-family: monospace;
   color: white;
   width: 100%;
@@ -21,6 +20,70 @@
   border-top: none;
 }
 
+.bookmark-icon {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.bookmark-icon :hover {
+  transform: translateY(-4px);
+}
+
+.bookmarked-icon {
+  height: 50px;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: 900;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.nav-button :hover {
+  color: greenyellow;
+}
+
+.nav-button :active {
+  transform: translateY(4px);
+}
+
+.clear-storage-btn {
+  bottom: 85px;
+  left: 50px;
+  background: #FFFFFF;
+  color: #000000;
+  font-weight: 900;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 0px 10px 0px 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.clear-storage-btn:hover {
+  color: blue;
+}
+
+.no-bookmarks-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  width: 100%;
+  color: greenyellow;
+}
 
 
 .suggestions-dropDown::-webkit-scrollbar-thumb {
@@ -78,6 +141,7 @@
     outline: none;
     color: white;
   }
+
 }
 
 ::placeholder {
@@ -212,6 +276,7 @@ a:not #urlLocator {
 }
 
 #footer {
+  position: relative;
   width: 10000px;
   margin-top: 70vh;
   font-weight: 100;
@@ -252,4 +317,21 @@ a:not #urlLocator {
   font-weight: bold;
   color: white;
   background-color: gray;
+}
+
+@media (max-width: 1000px) {
+  .nav-button {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    padding: 10px 20px 10px 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    top: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
 }

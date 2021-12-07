@@ -3,9 +3,10 @@ import { Card} from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import { Line } from 'react-chartjs-2';
 import TopTechTag from './TopTechTag';
+import bookmarkedIcon from '../assets/bookmarked.svg'
+import notBookmarkedIcon from '../assets/not-bookmarked.svg'
 
-const OrganisationCard = (props) => {
-  const { orgData } = props;
+const OrganisationCard = ({key, orgData, bookmarked, setBookmarked}) => {  
   const isMobile = window.innerWidth <= 750;
   const graphData = {
     labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
@@ -32,6 +33,21 @@ const OrganisationCard = (props) => {
             No. of times in GSoC:{' '}
             <span id='selectedTimes'>{orgData.year.length}</span>{' '}
           </h1>
+          { !bookmarked.includes(orgData) ?
+            <img className="bookmark-icon" src={notBookmarkedIcon} onClick={() => {setBookmarked([...bookmarked, orgData]);}} title="Add Bookmark"/>
+          : 
+            <img className="bookmark-icon bookmarked-icon" src={bookmarkedIcon} onClick={() => {
+              var array = bookmarked;
+              for(var i = 0; i < array.length; i++) {
+                if(array[i].name === orgData.name) {
+                  array.splice(i, 1);
+                  break;
+                }
+              }
+              setBookmarked([...array]);
+            }} title="Delete Bookmark"/>
+          }
+
 
           <h3 className='family'>
             Category: {orgData.cat != '' ? orgData.cat : 'Others'}
