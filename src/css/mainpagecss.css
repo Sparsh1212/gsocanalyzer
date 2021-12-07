@@ -90,6 +90,9 @@
     font-size: 50px;
     font-family: monospace;
     color: white;
+    cursor: pointer;
+    width: fit-content;
+    margin: 0 auto;
   }
 }
 
@@ -98,6 +101,9 @@
     font-size: 70px;
     font-family: monospace;
     color: white;
+    cursor: pointer;
+    width: fit-content;
+    margin: 0 auto;
   }
 }
 

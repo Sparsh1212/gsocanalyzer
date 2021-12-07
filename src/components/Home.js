@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Container, Header } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import data from '../data/finalData.json';
@@ -17,6 +17,13 @@ const descendingSortByYear = (resultList) =>{
 const Home = () => {
   const [validList, setValidList] = useState([]);
   const [displayLauncher, setDisplayLauncher] = useState(true);
+
+  const reRenderLauncher = () => {
+    AdvancedSearchRef.current.resetSearchState();
+    setValidList([]);
+    setDisplayLauncher(true);
+  };
+
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
     let sanitisedSearch = search.toLowerCase();
@@ -54,14 +61,16 @@ const Home = () => {
     }
   };
 
+  const AdvancedSearchRef = useRef();
+
   return (
     <React.Fragment>
       <Container id='mainContainer' fluid>
-        <Header id='mainHeader' as='h1' textAlign='center'>
-          GSoC Analyzer
+        <Header textAlign='center'>
+          <h1 id = 'mainHeader' onClick={reRenderLauncher}> GSoC Analyser </h1>
         </Header>
 
-        <AdvancedSearch buildSearchList={buildSearchList} />
+        <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />
         {displayLauncher && <LaunchingComponent />}
         {!displayLauncher && (
           <Container fluid style={{ paddingTop: 50 }}>
