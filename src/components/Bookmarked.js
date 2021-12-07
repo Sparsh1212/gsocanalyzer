@@ -20,7 +20,7 @@ function Bookmarked({bookmarked, setBookmarked}) {
         <Header id='mainHeader' as='h1' textAlign='center'>
           GSoC Analyzer
         </Header>
-      <Link to="/gsocanalyzer" className="nav-button">Home</Link>
+      <Link to="/" className="nav-button">Home</Link>
 
         <Container fluid style={{ paddingTop: 50 }}>
             <Header

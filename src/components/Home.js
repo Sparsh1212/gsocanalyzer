@@ -61,7 +61,7 @@ const Home = ({bookmarked, setBookmarked}) => {
         <Header id='mainHeader' as='h1' textAlign='center'>
           GSoC Analyzer
         </Header>
-      <Link to="/bookmarks" className="nav-button">Bookmarks</Link>
+        <Link to="/bookmarks" className="nav-button">Bookmarks</Link>
 
         <AdvancedSearch buildSearchList={buildSearchList} />
         {displayLauncher && <LaunchingComponent />}

@@ -28,8 +28,9 @@ const Footer = () => {
                     />{' '}
                     Rishabh
                 </a>
+                {'  '}|{'  '}
+                <button className="clear-storage-btn" onClick={() => {localStorage.clear(); window.location.reload()}}>Reset Bookmarks</button>
             </h3>
-             <button className="clear-storage-btn" onClick={() => {localStorage.clear(); window.location.reload()}}>Clear Local Storage</button>
         </Container>
     );
 }
