@@ -317,6 +317,7 @@ a:not #urlLocator {
   font-weight: bold;
   color: white;
   background-color: gray;
+  cursor: pointer;
 }
 
 @media (max-width: 1000px) {
