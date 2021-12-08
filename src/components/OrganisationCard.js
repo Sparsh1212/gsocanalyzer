@@ -91,7 +91,7 @@ const OrganisationCard = ({key, orgData, bookmarked, setBookmarked}) => {
           <br />
           <br />
           <form target="_blank" action={orgData.url}>
-              <input className="visitUrl" type="submit" value="Visit official page" />
+              <input className="visitUrl" type="submit" title="Visit official page" value="Visit official page" />
           </form>
         </Card.Description>
       </Card.Content>
