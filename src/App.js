@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import './css/mainpagecss.css';
 import Home from './components/Home';
 import Bookmarked from './components/Bookmarked';
@@ -15,6 +15,7 @@ function App() {
   }, [])
 
   useEffect(() => {
+    console.log("Deployed")
     localStorage.setItem('Bookmarked', JSON.stringify(bookmarked));
   }, [bookmarked]);
 
