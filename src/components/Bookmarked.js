@@ -31,7 +31,7 @@ function Bookmarked({bookmarked, setBookmarked}) {
               Bookmarked Organizations: {bookmarked.length}
             </Header>
             <br />
-            {bookmarked.length != 0 ? descendingSortByYear(bookmarked).map((org, index) => (
+            {bookmarked.length !== 0 ? descendingSortByYear(bookmarked).map((org, index) => (
               <OrganisationCard key={index} orgData={org} bookmarked={bookmarked} setBookmarked={setBookmarked} />
             )) : 
             <div className="no-bookmarks-msg">
