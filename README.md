@@ -16,6 +16,31 @@ GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call
 ### Search by tech-stack
 ![1](./searchByTechStack.png)
 
+## Bookmark 
+### Bookmarking feature allows you to save your favorite organisation and then quickly access them in the browser.
+
+Here is a short intro which will help you get started with bookmarking in GSoC Analyser.
+
+To add Bookmark search your favorite organization and click on the ribbon icon next to it.
+
+![1](./BookmarkNotAdded.png)
+
+After adding your organization the ribbon will turn red, congrats you've successfully added a bookmark.
+
+![1](./BookmarkSuccessfullAdded.png)
+
+You can check for your Bookmarks by going to bookmark.
+
+![1](./BookmarkBar.png)
+
+You can also clear Bookmark by clicking clear bookmark in footer.
+
+![1](./resetBookmark.png)
+
+After clearing Bookmark Bookmark bar will become like this. 
+
+![1](./ClearedBookmark.png)
+
 # Setup:
 - Clone the repo
 - cd into the repo directory
