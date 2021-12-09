@@ -50,7 +50,7 @@ const OrganisationCard = ({key, orgData, bookmarked, setBookmarked}) => {
 
 
           <h3 className='family'>
-            Category: {orgData.cat !== '' ? orgData.cat : 'Others'}
+            Category: {orgData.cat != '' ? orgData.cat : 'Others'}
           </h3>
 
           <h3 className='family'>
