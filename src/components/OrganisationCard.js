@@ -34,7 +34,7 @@ const OrganisationCard = ({key, orgData, bookmarked, setBookmarked}) => {
             <span id='selectedTimes'>{orgData.year.length}</span>{' '}
           </h1>
           { !bookmarked.includes(orgData) ?
-            <img className="bookmark-icon" src={notBookmarkedIcon} onClick={() => {setBookmarked([...bookmarked, orgData]);}} title="Add Bookmark" alt=""/>
+            <img className="bookmark-icon" src={notBookmarkedIcon} onClick={() => {setBookmarked([...bookmarked, orgData]);}} title="Add Bookmark"/>
           : 
             <img className="bookmark-icon bookmarked-icon" src={bookmarkedIcon} onClick={() => {
               var array = bookmarked;
@@ -45,7 +45,7 @@ const OrganisationCard = ({key, orgData, bookmarked, setBookmarked}) => {
                 }
               }
               setBookmarked([...array]);
-            }} title="Delete Bookmark" alt=""/>
+            }} title="Delete Bookmark"/>
           }
 
 
