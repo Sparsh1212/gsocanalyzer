@@ -115,7 +115,7 @@ const AdvancedSearch = forwardRef((props, ref) => {
 
   useEffect(() => {
     autoComplete && setSuggestions(autoComplete.suggest(search))
-  }, [search,autoComplete])
+  }, [search])
 
   return (
     <Container textAlign='center'>
