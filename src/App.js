@@ -15,7 +15,6 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log("Deployed")
     localStorage.setItem('Bookmarked', JSON.stringify(bookmarked));
   }, [bookmarked]);
 
