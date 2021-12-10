@@ -8,38 +8,36 @@ GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call
 
 
 ### Home Page
-![1](./homePage.png)
+![1](./readme-assets/homePage.png)
 
 ### Search by organisation name
-![1](./searchByOrganisation.png)
+![1](./readme-assets/searchByOrganisation.png)
 
 ### Search by tech-stack
-![1](./searchByTechStack.png)
+![1](./readme-assets/searchByTechStack.png)
 
 ## Bookmark 
 ### Bookmarking feature allows you to save your favorite organisation and then quickly access them in the browser.
 
-Here is a short intro which will help you get started with bookmarking in GSoC Analyser.
+Steps to bookmark an organization.
 
 To add Bookmark search your favorite organization and click on the ribbon icon next to it.
 
-![1](./BookmarkNotAdded.png)
+![1](./readme-assets/BookmarkNotAdded.png)
 
 After adding your organization the ribbon will turn red, congrats you've successfully added a bookmark.
 
-![1](./BookmarkSuccessfullAdded.png)
+![1](./readme-assets/BookmarkSuccessfullAdded.png)
 
-You can check for your Bookmarks by going to bookmark.
+You can check your shortlisted organizations by navigating to the Bookmarks section.
 
-![1](./BookmarkBar.png)
+![1](./readme-assets/BookmarkBar.png)
 
-You can also clear Bookmark by clicking clear bookmark in footer.
+You can reset all your bookmarks by clicking the Reset Bookmarks button, which is present at the footer.
 
-![1](./resetBookmark.png)
+![1](./readme-assets/resetBookmark.png)
 
-After clearing Bookmark Bookmark bar will become like this. 
 
-![1](./ClearedBookmark.png)
 
 # Setup:
 - Clone the repo
