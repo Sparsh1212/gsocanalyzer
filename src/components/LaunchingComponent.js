@@ -16,6 +16,8 @@ const LaunchingComponent = () => {
           <p>Search by tech-stack / organisation name / category or by topic.</p>
           <Typist.Delay ms={200} />
           <p>Start Searching now!</p>
+          <Typist.Delay ms={250} />
+          <p>Also Bookmark your favorite organisation.</p>
         </div>
       </Typist>
     </React.Fragment>
