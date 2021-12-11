@@ -5,6 +5,17 @@
   color: white;
   width: 100%;
 }
+/* 
+#gsocStat{
+
+} */
+
+#summaryBtn{
+  border: 1px solid black;
+  padding:6px 10px;
+  border-radius:6px;
+  margin-top: 18px;
+}
 
 .suggestions-dropDown {
   text-align: left;
