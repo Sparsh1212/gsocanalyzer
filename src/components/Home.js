@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Container, Header, SearchCategory } from 'semantic-ui-react';
+import { Container, Header } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import data from '../data/finalData.json';
 import OrganisationCard from './OrganisationCard';
