@@ -712,7 +712,18 @@
         "tech": [
             "python",
             "javascript",
+            "php/javascript/html",
+            "css/html",
+            "c/c++",
+            "gtk",
+            "virtuoso",
+            "hardware",
+            "php",
+            "java",
+            "python 3",
             "mysql",
+            "qt",
+            "arduino",
             "python deep learning frameworks",
             "perl"
         ],
@@ -720,12 +731,24 @@
         "top": [
             "python",
             "java",
+            "robotics",
+            "gtk",
+            "data",
+            "programming languages",
+            "cloud",
             "javascript",
+            "c- c+",
+            "c++ tools",
+            "java jsp",
+            "open education",
             "open hardware",
             "perl"
         ],
         "year": [
-            2021
+            2021,
+            2019,
+            2018,
+            2017
         ],
         "project": [
             0,
@@ -736,9 +759,9 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
+            4,
+            10,
+            13,
             0,
             9
         ]
@@ -4086,8 +4109,11 @@
             "php",
             "javascript",
             "c/c++",
+            "jquery",
             "twig",
+            "bash",
             "python",
+            "oss compliance",
             "postgresql"
         ],
         "cat": "End User Applications",
@@ -4102,7 +4128,8 @@
         "year": [
             2021,
             2020,
-            2018
+            2018,
+            2019
         ],
         "project": [
             0,
@@ -4115,7 +4142,7 @@
             0,
             0,
             1,
-            0,
+            3,
             3,
             7
         ]
@@ -11157,43 +11184,6 @@
         ]
     },
     {
-        "url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4832912116023296/",
-        "name": "FOSSology Project",
-        "tech": [
-            "postgresql",
-            "php",
-            "c/c++",
-            "jquery",
-            "bash"
-        ],
-        "cat": "Other",
-        "top": [
-            "compliance",
-            "license-scan",
-            "oss licensing",
-            "spdx",
-            "oss compliance"
-        ],
-        "year": [
-            2019
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            3,
-            0,
-            0
-        ]
-    },
-    {
         "url": "https://summerofcode.withgoogle.com/archive/2019/organizations/5090343328940032/",
         "name": "FrameNet Brasil at the Federal University of Juiz de Fora",
         "tech": [
@@ -12255,43 +12245,6 @@
             1,
             2,
             2,
-            0,
-            0
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2019/organizations/6491213031538688/",
-        "name": "Open Technologies Aliance - GFOSS",
-        "tech": [
-            "python",
-            "javascript",
-            "gtk",
-            "qt",
-            "arduino"
-        ],
-        "cat": "Programming Languages and Development Tools",
-        "top": [
-            "robotics",
-            "programming languages",
-            "open education",
-            "c- c+",
-            "java"
-        ],
-        "year": [
-            2019
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            13,
             0,
             0
         ]
@@ -14041,43 +13994,6 @@
         ]
     },
     {
-        "url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5472477677355008/",
-        "name": "GFOSS - Open Technologies Alliance",
-        "tech": [
-            "python 3",
-            "php/javascript/html",
-            "css/html",
-            "java",
-            "c/c++"
-        ],
-        "cat": "Other",
-        "top": [
-            "python",
-            "gtk",
-            "java jsp",
-            "c++ tools",
-            "javascript"
-        ],
-        "year": [
-            2018
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            10,
-            0,
-            0,
-            0
-        ]
-    },
-    {
         "url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6595441034526720/",
         "name": "GNU Project",
         "tech": [
@@ -15564,17 +15480,25 @@
             "python",
             "matlab",
             "c++",
+            "big data",
+            "apache spark",
+            "hadoop",
             "javascript"
         ],
         "cat": "Science and Medicine",
         "top": [
             "biomedical data science",
+            "biomedical informatics",
             "cancer informatics",
             "deep learning",
+            "bioinformtics",
+            "big data",
+            "database",
             "medical imaging"
         ],
         "year": [
             2018,
+            2017,
             2016
         ],
         "project": [
@@ -15586,7 +15510,7 @@
             0,
             0,
             4,
-            0,
+            3,
             2,
             0,
             0,
@@ -17233,41 +17157,6 @@
         ]
     },
     {
-        "url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6266968780832768/",
-        "name": "Open Technologies Alliance - GFOSS",
-        "tech": [
-            "php",
-            "java",
-            "mysql",
-            "virtuoso",
-            "python"
-        ],
-        "cat": "Other",
-        "top": [
-            "data",
-            "cloud",
-            "hardware"
-        ],
-        "year": [
-            2017
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            4,
-            0,
-            0,
-            0,
-            0
-        ]
-    },
-    {
         "url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5718999941775360/",
         "name": "oVirt",
         "tech": [
@@ -17586,43 +17475,6 @@
             0,
             0,
             4,
-            0,
-            0,
-            0,
-            0
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2017/organizations/6367868836904960/",
-        "name": "Stony Brook University, Biomedical Informatics",
-        "tech": [
-            "big data",
-            "apache spark",
-            "matlab",
-            "c++",
-            "hadoop"
-        ],
-        "cat": "Science and Medicine",
-        "top": [
-            "biomedical informatics",
-            "medical imaging",
-            "bioinformtics",
-            "big data",
-            "database"
-        ],
-        "year": [
-            2017
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            3,
             0,
             0,
             0,
