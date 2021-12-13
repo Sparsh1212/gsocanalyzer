@@ -27,36 +27,45 @@ const Home = ({bookmarked, setBookmarked}) => {
 
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
-    let sanitisedSearch = search.toLowerCase();
+    let sanitisedSearch = search.toLowerCase().replaceAll(" ", "");
+    let searches = sanitisedSearch.split(",");
     if (filter === 0) {
       setValidList(
         data.filter((org) => {
+          let matches = 0;
           for (let i = 0; i < org.tech.length; i++) {
-            if (org.tech[i].toLowerCase() === sanitisedSearch) {
-              return true;
+            for (let j = 0; j < searches.length; j++) {
+              if (org.tech[i].toLowerCase().replaceAll(" ", "") === searches[j]) {
+                matches++;
+                break;
+              }
             }
           }
-          return false;
+          return (matches == searches.length);
         })
       );
       
     } else if (filter === 1) {
       setValidList(
-        data.filter((org) => org.name.toLowerCase().includes(sanitisedSearch))
+        data.filter((org) => org.name.toLowerCase().replaceAll(" ", "").includes(sanitisedSearch))
       );
     } else if (filter === 2) {
       setValidList(
-        data.filter((org) => org.cat.toLowerCase().includes(sanitisedSearch))
+        data.filter((org) => org.cat.toLowerCase().replaceAll(" ", "").includes(sanitisedSearch))
       );
     } else {
       setValidList(
         data.filter((org) => {
+          let matches = 0;
           for (let i = 0; i < org.top.length; i++) {
-            if (org.top[i].toLowerCase() === sanitisedSearch) {
-              return true;
+            for (let j = 0; j < searches.length; j++) {
+              if (org.top[i].toLowerCase().replaceAll(" ", "") === searches[j]) {
+                matches++;
+                break;
+              }
             }
           }
-          return false;
+          return (matches == searches.length);
         })
       );
     }
