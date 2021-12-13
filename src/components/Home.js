@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, SearchCategory } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import data from '../data/finalData.json';
 import OrganisationCard from './OrganisationCard';
@@ -27,15 +27,16 @@ const Home = ({bookmarked, setBookmarked}) => {
 
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
-    let sanitisedSearch = search.toLowerCase().replaceAll(" ", "");
+    let sanitisedSearch = search.toLowerCase();
     let searches = sanitisedSearch.split(",");
+    searches = searches.map(Function.prototype.call, String.prototype.trim);
     if (filter === 0) {
       setValidList(
         data.filter((org) => {
           let matches = 0;
           for (let i = 0; i < org.tech.length; i++) {
             for (let j = 0; j < searches.length; j++) {
-              if (org.tech[i].toLowerCase().replaceAll(" ", "") === searches[j]) {
+              if (org.tech[i].toLowerCase() === searches[j]) {
                 matches++;
                 break;
               }
@@ -47,11 +48,11 @@ const Home = ({bookmarked, setBookmarked}) => {
       
     } else if (filter === 1) {
       setValidList(
-        data.filter((org) => org.name.toLowerCase().replaceAll(" ", "").includes(sanitisedSearch))
+        data.filter((org) => org.name.toLowerCase().includes(sanitisedSearch))
       );
     } else if (filter === 2) {
       setValidList(
-        data.filter((org) => org.cat.toLowerCase().replaceAll(" ", "").includes(sanitisedSearch))
+        data.filter((org) => org.cat.toLowerCase().includes(sanitisedSearch))
       );
     } else {
       setValidList(
@@ -59,7 +60,7 @@ const Home = ({bookmarked, setBookmarked}) => {
           let matches = 0;
           for (let i = 0; i < org.top.length; i++) {
             for (let j = 0; j < searches.length; j++) {
-              if (org.top[i].toLowerCase().replaceAll(" ", "") === searches[j]) {
+              if (org.top[i].toLowerCase() === searches[j]) {
                 matches++;
                 break;
               }
