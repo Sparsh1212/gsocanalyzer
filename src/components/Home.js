@@ -33,16 +33,14 @@ const Home = ({bookmarked, setBookmarked}) => {
     if (filter === 0) {
       setValidList(
         data.filter((org) => {
-          let matches = 0;
           for (let i = 0; i < org.tech.length; i++) {
             for (let j = 0; j < searches.length; j++) {
               if (org.tech[i].toLowerCase() === searches[j]) {
-                matches++;
-                break;
+                return true;
               }
             }
           }
-          return (matches == searches.length);
+          return false;
         })
       );
       
@@ -57,16 +55,14 @@ const Home = ({bookmarked, setBookmarked}) => {
     } else {
       setValidList(
         data.filter((org) => {
-          let matches = 0;
           for (let i = 0; i < org.top.length; i++) {
             for (let j = 0; j < searches.length; j++) {
               if (org.top[i].toLowerCase() === searches[j]) {
-                matches++;
-                break;
+                return true;
               }
             }
           }
-          return (matches == searches.length);
+          return false;
         })
       );
     }
