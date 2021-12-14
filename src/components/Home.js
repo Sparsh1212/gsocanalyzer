@@ -29,10 +29,21 @@ const Home = ({ bookmarked, setBookmarked }) => {
     AdvancedSearchRef.current.resetSearchState();
     setValidList([]);
     setDisplayLauncher(true);
+    let elems = document.getElementsByClassName('gsocChart');
+    for (var i = 0; i < elems.length; i += 1) {
+      elems[i].style.display = 'block';
+    }
   };
 
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
+    
+    //removing the charts
+    let elems = document.getElementsByClassName('gsocChart');
+    for (var i=0 ; i<elems.length ; i+=1){
+      elems[i].style.display = 'none';
+    }
+
     let sanitisedSearch = search.toLowerCase();
     if (filter === 0) {
       setValidList(
@@ -70,29 +81,6 @@ const Home = ({ bookmarked, setBookmarked }) => {
 
   const AdvancedSearchRef = useRef();
 
-  const showHideSummary = () => {
-
-    if (document.getElementById('gsocStat').style.display !== 'none') {
-      document.getElementById('gsocStat').style.display = 'none';
-      let elems = document.getElementsByClassName('gsocChart');
-      for (var i = 0; i < elems.length; i += 1) {
-        elems[i].style.display = 'none';
-      }
-      document.getElementById('summaryBtn').innerText = "Show Summary";
-      document.getElementById('summaryBtn').style.marginRight = "5px";
-    }
-
-    else {
-      document.getElementById('gsocStat').style.display = 'block';
-      let elems = document.getElementsByClassName('gsocChart');
-      for (var j = 0; j < elems.length; j += 1) {
-        elems[j].style.display = 'block';
-      }
-      document.getElementById('summaryBtn').innerText = "Hide Summary";
-      document.getElementById('summaryBtn').style.marginRight = "0";
-    }
-
-  }
 
   return (
     <React.Fragment>
@@ -106,32 +94,11 @@ const Home = ({ bookmarked, setBookmarked }) => {
         <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />
         {displayLauncher && <LaunchingComponent />}
 
-        <div style={{ float: 'right' }}>
-          {/* GSOC summary pane added by aritroCoder */}
-          <div id="gsocStat" style={{ overflow: 'auto', height: '432px' }}>
-            <h5>Scroll here to find summarised GSoC data of several years</h5>
-            {shortdata.map(item => {
-              return (
-                <>
-                  <h4>{item.year}</h4>
-                  <div>
-                    {item.students}<br />
-                    {item.successRate} Success Rate<br />
-                    {item.no_of_orgs} Open Source Organisations
-                  </div>
-                </>
-              )
-            }
-            )
-            }
-          </div>
-          <button onClick={showHideSummary} id="summaryBtn">Hide Summary</button>
-        </div>
 
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-          <GraphChart />
-          <SelectionChart />
-          <CompanyChart/>
+        <div style={{ display: 'flex', flexDirection: 'coloumn', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <GraphChart font={window.innerWidth > 500 ? 25 : 15}/>
+          <SelectionChart font={window.innerWidth > 500 ? 25 : 15} />
+          <CompanyChart font={window.innerWidth > 500 ? 25 : 15} />
         </div>
 
         {!displayLauncher && (

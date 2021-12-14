@@ -143,13 +143,6 @@ const AdvancedSearch = forwardRef((props, ref) => {
                   key={content}
                   onClick={() => {
                     setSearch(content)
-                    document.getElementById("gsocStat").style.display ='none'; //hide GSOC stat pane
-                    let elems = document.getElementsByClassName('gsocChart');
-                    for (var i=0 ; i<elems.length ; i+=1){
-                      elems[i].style.display = 'none';
-                    }
-                    document.getElementById('summaryBtn').innerText = "Show Summary";
-                    document.getElementById('summaryBtn').style.marginRight = "5px";
                     buildSearchList(content, filter)
                   }}>{content}</p>
               ))}
