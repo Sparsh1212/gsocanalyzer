@@ -278,7 +278,7 @@ a:not #urlLocator {
 #footer {
   position: relative;
   width: 10000px;
-  margin-top: 70vh;
+  margin-top: 60vh;
   font-weight: 100;
   padding: 20px;
   background-color: black;
@@ -287,7 +287,7 @@ a:not #urlLocator {
 @media (max-width: 750px) {
   #animatedText {
     width: 80%;
-
+    min-height: 70vh;
     margin: 30px 10%;
     font-size: 15px;
     text-align: center;
@@ -300,7 +300,7 @@ a:not #urlLocator {
 @media (min-width: 750px) {
   #animatedText {
     width: 80%;
-
+    min-height: 70vh;
     margin: 30px 10%;
     font-size: 35px;
     text-align: center;
