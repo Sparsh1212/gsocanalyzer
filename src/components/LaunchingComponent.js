@@ -15,7 +15,7 @@ const LaunchingComponent = () => {
           <Typist.Delay ms={150} />
           <p>Search by tech-stack / organisation name / category or by topic.</p>
           <Typist.Delay ms={200} />
-          <p>Start Searching now!</p>
+          <p>Start Searching now! Use comma to separate multiple tags in tech or topics.</p>
           <Typist.Delay ms={250} />
           <p>Also Bookmark your favorite organisation.</p>
         </div>
