@@ -293,7 +293,7 @@ a:not #urlLocator {
 @media (max-width: 750px) {
   #animatedText {
     width: 80%;
-    min-height: 70vh;
+    min-height: 20vh;
     margin: 30px 10%;
     font-size: 15px;
     text-align: center;
@@ -306,7 +306,7 @@ a:not #urlLocator {
 @media (min-width: 750px) {
   #animatedText {
     width: 80%;
-    min-height: 70vh;
+    min-height: 54vh;
     margin: 30px 10%;
     font-size: 35px;
     text-align: center;
