@@ -28,12 +28,16 @@ const Home = ({bookmarked, setBookmarked}) => {
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
     let sanitisedSearch = search.toLowerCase();
+    let searches = sanitisedSearch.split(",");
+    searches = searches.map(Function.prototype.call, String.prototype.trim);
     if (filter === 0) {
       setValidList(
         data.filter((org) => {
           for (let i = 0; i < org.tech.length; i++) {
-            if (org.tech[i].toLowerCase() === sanitisedSearch) {
-              return true;
+            for (let j = 0; j < searches.length; j++) {
+              if (org.tech[i].toLowerCase() === searches[j]) {
+                return true;
+              }
             }
           }
           return false;
@@ -52,8 +56,10 @@ const Home = ({bookmarked, setBookmarked}) => {
       setValidList(
         data.filter((org) => {
           for (let i = 0; i < org.top.length; i++) {
-            if (org.top[i].toLowerCase() === sanitisedSearch) {
-              return true;
+            for (let j = 0; j < searches.length; j++) {
+              if (org.top[i].toLowerCase() === searches[j]) {
+                return true;
+              }
             }
           }
           return false;
