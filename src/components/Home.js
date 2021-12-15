@@ -8,19 +8,15 @@ import Footer from './Footer';
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
 import LaunchingComponent from './LaunchingComponent';
 import { Link } from 'react-router-dom';
-import shortdata from "../data/gsocData.json";
-import GraphChart from './GraphChart';
-import SelectionChart from './SelectionChart';
-import CompanyChart from './CompanyChart';
 
 
-const descendingSortByYear = (resultList) => {
-  return resultList.sort((a, b) => {
+const descendingSortByYear = (resultList) =>{
+  return resultList.sort( (a,b) => {
     return (b.year.length - a.year.length)
   });
 }
 
-const Home = ({ bookmarked, setBookmarked }) => {
+const Home = ({bookmarked, setBookmarked}) => {
 
   const [validList, setValidList] = useState([]);
   const [displayLauncher, setDisplayLauncher] = useState(true);
@@ -29,21 +25,11 @@ const Home = ({ bookmarked, setBookmarked }) => {
     AdvancedSearchRef.current.resetSearchState();
     setValidList([]);
     setDisplayLauncher(true);
-    let elems = document.getElementsByClassName('gsocChart');
-    for (var i = 0; i < elems.length; i += 1) {
-      elems[i].style.display = 'block';
-    }
   };
 
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
     
-    //removing the charts
-    let elems = document.getElementsByClassName('gsocChart');
-    for (var i=0 ; i<elems.length ; i+=1){
-      elems[i].style.display = 'none';
-    }
-
     let sanitisedSearch = search.toLowerCase();
     if (filter === 0) {
       setValidList(
@@ -81,12 +67,11 @@ const Home = ({ bookmarked, setBookmarked }) => {
 
   const AdvancedSearchRef = useRef();
 
-
   return (
     <React.Fragment>
       <Container id='mainContainer' fluid>
         <Header textAlign='center'>
-          <h1 id='mainHeader' onClick={reRenderLauncher}> GSoC Analyser </h1>
+          <h1 id = 'mainHeader' onClick={reRenderLauncher}> GSoC Analyser </h1>
         </Header>
         <Link to="/bookmarks" className="nav-button">Bookmarks</Link>
 
@@ -95,11 +80,6 @@ const Home = ({ bookmarked, setBookmarked }) => {
         {displayLauncher && <LaunchingComponent />}
 
 
-        <div style={{ display: 'flex', flexDirection: 'coloumn', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <GraphChart font={window.innerWidth > 500 ? 25 : 15}/>
-          <SelectionChart font={window.innerWidth > 500 ? 25 : 15} />
-          <CompanyChart font={window.innerWidth > 500 ? 25 : 15} />
-        </div>
 
         {!displayLauncher && (
           <Container fluid style={{ paddingTop: 50 }}>
