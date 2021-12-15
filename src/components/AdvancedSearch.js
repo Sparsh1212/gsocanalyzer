@@ -1,12 +1,12 @@
-import React, { forwardRef, useEffect, useState, useRef } from "react";
-import { Container, Dropdown } from "semantic-ui-react";
-import "../css/mainpagecss.css";
+import React, { forwardRef, useEffect, useState, useRef } from 'react';
+import { Container, Dropdown } from 'semantic-ui-react';
+import '../css/mainpagecss.css';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-import data from "../data/finalData.json";
-import AutoComplete from "../utils/AutoComplete";
+import data from '../data/finalData.json';
+import AutoComplete from '../utils/AutoComplete';
 
 const { useImperativeHandle } = React;
 
@@ -20,27 +20,27 @@ const AdvancedSearch = forwardRef((props, ref) => {
   const searchFilterOptions = [
     {
       key: 0,
-      text: "Tech Stack",
+      text: 'Tech Stack',
       value: 0,
     },
     {
       key: 1,
-      text: "Organisation Name",
+      text: 'Organisation Name',
       value: 1,
     },
     {
       key: 2,
-      text: "Category",
+      text: 'Category',
       value: 2,
     },
     {
       key: 3,
-      text: "Topic",
+      text: 'Topic',
       value: 3,
     },
   ];
 
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [filter, setFilter] = useState(0);
   const [autoComplete, setAutoComplete] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
@@ -50,7 +50,7 @@ const AdvancedSearch = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     resetSearchState() {
-      setSearch("");
+      setSearch('');
       setFilter(0);
       setAutoComplete(null);
       setSuggestions([]);
@@ -75,10 +75,10 @@ const AdvancedSearch = forwardRef((props, ref) => {
   };
 
   useEffect(() => {
-    document.body.addEventListener("click", focusHandler);
-    inputElement = document.getElementById("inputBox");
+    document.body.addEventListener('click', focusHandler);
+    inputElement = document.getElementById('inputBox');
     return () => {
-      document.body.removeEventListener("click", focusHandler);
+      document.body.removeEventListener('click', focusHandler);
     };
   }, []);
 
@@ -94,14 +94,14 @@ const AdvancedSearch = forwardRef((props, ref) => {
     if (filter === 1) {
       data.forEach((e) => {
         list.push(
-          e.name.replaceAll("/", "").replaceAll("  ", " ").toLowerCase()
+          e.name.replaceAll('/', '').replaceAll('  ', ' ').toLowerCase()
         );
       });
     }
     if (filter === 2) {
       data.forEach((e) => {
         list.push(
-          e.cat.replaceAll("/", "").replaceAll("  ", " ").toLowerCase()
+          e.cat.replaceAll('/', '').replaceAll('  ', ' ').toLowerCase()
         );
       });
     }
@@ -114,11 +114,11 @@ const AdvancedSearch = forwardRef((props, ref) => {
     }
     setAutoComplete(new AutoComplete(list));
     setSuggestions([]);
-    setSearch("");
+    setSearch('');
   }, [filter]);
 
   useEffect(() => {
-    autoComplete && setSuggestions(autoComplete.suggest(""));
+    autoComplete && setSuggestions(autoComplete.suggest(''));
   }, [autoComplete]);
 
   useEffect(() => {
@@ -126,13 +126,13 @@ const AdvancedSearch = forwardRef((props, ref) => {
   }, [search]);
 
   const func = (e) => {
-    if (e.code == "Enter") {
+    if (e.code == 'Enter') {
       setSearch(suggestionCopy[searchCounter] || _inputHandle.current.value);
     }
     if (suggestionCopy.length == 0 && searchCounter == 0) {
       setsearchCounter(0);
     } else {
-      if (e.code == "ArrowDown") {
+      if (e.code == 'ArrowDown') {
         if (searchCounter > suggestionCopy.length - 1) {
           setsearchCounter(searchCounter--);
         } else {
@@ -147,7 +147,7 @@ const AdvancedSearch = forwardRef((props, ref) => {
           setsearchCounter(searchCounter++);
         }
       }
-      if (e.code == "ArrowUp") {
+      if (e.code == 'ArrowUp') {
         searchCounter == 0
           ? setsearchCounter(0)
           : setsearchCounter(searchCounter--);
@@ -164,9 +164,9 @@ const AdvancedSearch = forwardRef((props, ref) => {
   };
 
   useEffect(() => {
-    _searchBoxHandle.current.addEventListener("keydown", func);
+    _searchBoxHandle.current.addEventListener('keydown', func);
     return () => {
-      _searchBoxHandle.current.removeEventListener("keydown", func);
+      _searchBoxHandle.current.removeEventListener('keydown', func);
     };
   }, [suggestionCopy]);
 
@@ -220,7 +220,7 @@ const AdvancedSearch = forwardRef((props, ref) => {
             )}
         </div>
         <button type="submit" onClick={handleSearch} className="search-btn">
-          <FontAwesomeIcon color="white" className="fa-2x" icon={faSearch} />{" "}
+          <FontAwesomeIcon color="white" className="fa-2x" icon={faSearch} />{' '}
         </button>
 
         <Dropdown
