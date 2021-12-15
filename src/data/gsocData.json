@@ -1,0 +1,105 @@
+[
+    {
+        "year":2021,
+        "students":"1,292 students accepted from 69 countries",
+        "successRate": "93.27%",
+      "no_of_orgs":199
+    },
+    {
+        "year":2020,
+        "students":"1,198 students accepted from 66 countries",
+        "successRate": "92.32%",
+      "no_of_orgs":199
+    },
+    {
+        "year":2019,
+        "students":"1,276 students accepted from 63 countries",
+        "successRate": "89.05%",
+      "no_of_orgs":201
+    },
+    {
+        "year":2018,
+        "students":"1,264 students accepted from 62 countries",
+        "successRate": "86.24%",
+      "no_of_orgs":206
+    },
+    {
+        "year":2017,
+        "students":"1,318 students accepted from 72 countries",
+        "successRate": "86.2%",
+      "no_of_orgs":198
+    },
+    {
+        "year":2016,
+        "students":"1,206 students accepted from 67 countries",
+        "successRate": "85.6%",
+      "no_of_orgs":178
+    },
+    {
+        "year":2015,
+        "students":"1,051 students accepted from 73 countries",
+        "successRate": "88.2%",
+      "no_of_orgs":134
+    },
+    {
+        "year":2014,
+        "students":"1,307 students accepted from 78 countries",
+        "successRate": "89.7%",
+      "no_of_orgs":190
+    },
+    {
+        "year":2013,
+        "students":"1,192 students accepted from 70 countries",
+        "successRate": "88.9%",
+      "no_of_orgs":177
+    },
+    {
+        "year":2012,
+        "students":"1,212 students accepted from 69 countries",
+        "successRate": "88.5%",
+      "no_of_orgs":180
+    },
+    {
+        "year":2011,
+        "students":"1,115 students accepted from 68 countries",
+        "successRate": "88%",
+      "no_of_orgs":175
+    },
+    {
+        "year":2010,
+        "students":"1,026 students accepted from 69 countries",
+        "successRate": "89%",
+      "no_of_orgs":150
+    },
+    {
+        "year":2009,
+        "students":"1,000 students accepted from 70 countries",
+        "successRate": "85%",
+      "no_of_orgs":150
+    },
+    {
+        "year":2008,
+        "students":"1,126 students accepted from 64 countries",
+        "successRate": "83%",
+      "no_of_orgs":175
+    },
+    {
+        "year":2007,
+        "students":"905 students accepted from 62 countries",
+        "successRate": "81%",
+      "no_of_orgs":135
+    },
+    {
+        "year":2006,
+        "students":"630 students accepted from 55 countries",
+        "successRate": "82%",
+      "no_of_orgs":102
+    },
+    {
+        "year":2005,
+        "students":"410 students accepted",
+        "successRate": "80%",
+      "no_of_orgs":42
+    }
+    
+]

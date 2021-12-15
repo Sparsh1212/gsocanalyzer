@@ -77,7 +77,7 @@ const Home = ({bookmarked, setBookmarked}) => {
           <h1 id = 'mainHeader' onClick={reRenderLauncher}> GSoC Analyser </h1>
         </Header>
         <Link to="/bookmarks" className="nav-button">Bookmarks</Link>
-
+        
         <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />
         {displayLauncher && <LaunchingComponent />}
         {!displayLauncher && (
@@ -89,6 +89,7 @@ const Home = ({bookmarked, setBookmarked}) => {
             >
               Search Results: {validList.length}
             </Header>
+            <br />
             <br />
             {descendingSortByYear(validList).map((org, index) => (
               <OrganisationCard key={index} orgData={org} bookmarked={bookmarked} setBookmarked={setBookmarked} />

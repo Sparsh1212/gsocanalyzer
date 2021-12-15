@@ -2,6 +2,9 @@ import React from 'react';
 
 import Typist from 'react-typist';
 import '../css/mainpagecss.css';
+import ParticipantChart from './Launcher/ParticipantChart';
+import SelectionChart from './Launcher/SelectionChart';
+import OrganizationChart from './Launcher/OrganizationChart';
 
 const LaunchingComponent = () => {
   return (
@@ -9,17 +12,18 @@ const LaunchingComponent = () => {
       <Typist avgTypingDelay={20} cursor={{ show: false }}>
         <div id='animatedText'>
           <p>
-            A blazingly fast tool to get the past 12 year analytics of
-            organizations selected in GSoC.
+          A blazingly-fast tool to analyze all the organizations selected in Google Summer of Code.
           </p>
-          <Typist.Delay ms={150} />
-          <p>Search by tech-stack / organisation name / category or by topic.</p>
           <Typist.Delay ms={200} />
-          <p>Start Searching now! Use comma to separate multiple tags in tech or topics.</p>
-          <Typist.Delay ms={250} />
-          <p>Also Bookmark your favorite organisation.</p>
+          <p>Start Analyzing now! (Use a comma to separate multiple tags in tech/topic)</p>
         </div>
       </Typist>
+        <div style={{ display: 'flex', flexDirection: 'coloumn', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <ParticipantChart font={window.innerWidth > 500 ? 25 : 15}/>
+          <SelectionChart font={window.innerWidth > 500 ? 25 : 15} />
+          <OrganizationChart font={window.innerWidth > 500 ? 25 : 15} />
+        </div>
+
     </React.Fragment>
   );
 };

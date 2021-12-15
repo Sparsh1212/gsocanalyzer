@@ -1,0 +1,18 @@
+
+.gsocChart {
+  width: 80%;
+  height: 300px;
+  display: block;
+  margin: 10px;
+}
+
+@media screen and (min-width: 750px) {
+  .gsocChart{
+    margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .gsocChart{
+    margin-bottom: 43px;
+  }
+}
