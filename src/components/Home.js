@@ -7,17 +7,15 @@ import AdvancedSearch from './AdvancedSearch';
 import Footer from './Footer';
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
 import LaunchingComponent from './LaunchingComponent';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-
-const descendingSortByYear = (resultList) =>{
+const descendingSortByYear = (resultList) =>{ 
   return resultList.sort( (a,b) => {
     return (b.year.length - a.year.length)
-  });
+   });
 }
 
 const Home = ({bookmarked, setBookmarked}) => {
-
   const [validList, setValidList] = useState([]);
   const [displayLauncher, setDisplayLauncher] = useState(true);
 
@@ -29,7 +27,6 @@ const Home = ({bookmarked, setBookmarked}) => {
 
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
-    
     let sanitisedSearch = search.toLowerCase();
     if (filter === 0) {
       setValidList(
@@ -42,7 +39,7 @@ const Home = ({bookmarked, setBookmarked}) => {
           return false;
         })
       );
-
+      
     } else if (filter === 1) {
       setValidList(
         data.filter((org) => org.name.toLowerCase().includes(sanitisedSearch))
@@ -78,9 +75,6 @@ const Home = ({bookmarked, setBookmarked}) => {
 
         <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />
         {displayLauncher && <LaunchingComponent />}
-
-
-
         {!displayLauncher && (
           <Container fluid style={{ paddingTop: 50 }}>
             <Header
