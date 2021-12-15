@@ -176,9 +176,9 @@ const AdvancedSearch = forwardRef((props, ref) => {
   }, [suggestions]);
 
   return (
-    <Container textAlign="center">
-      <form className="search-form" autocomplete="off">
-        <div ref={_searchBoxHandle} id="searchBox">
+    <Container textAlign='center'>
+      <form className='search-form' autocomplete='off'>
+        <div ref={_searchBoxHandle} id='searchBox'>
           <input
             ref={_inputHandle}
             onChange={(e) => {
@@ -188,16 +188,16 @@ const AdvancedSearch = forwardRef((props, ref) => {
               }
               setSearch(e.target.value.toLowerCase());
             }}
-            type="text"
-            name="search"
-            placeholder="Search..."
-            id="inputBox"
-            autocomplete="off"
+            type='text'
+            name='search'
+            placeholder='Search...'
+            id='inputBox'
+            autocomplete='off'
           />
           {isInputInFocus &&
             suggestions.length > 0 &&
             suggestions[0] !== search && (
-              <div className="suggestions-dropDown">
+              <div className='suggestions-dropDown'>
                 {suggestions.map(
                   (content) =>
                     content !== search && (
@@ -219,14 +219,14 @@ const AdvancedSearch = forwardRef((props, ref) => {
               </div>
             )}
         </div>
-        <button type="submit" onClick={handleSearch} className="search-btn">
-          <FontAwesomeIcon color="white" className="fa-2x" icon={faSearch} />{' '}
+        <button type='submit' onClick={handleSearch} className='search-btn'>
+          <FontAwesomeIcon color='white' className='fa-2x' icon={faSearch} />{' '}
         </button>
 
         <Dropdown
           value={filter}
           onChange={handleFilter}
-          id="searchFilter"
+          id='searchFilter'
           selection
           options={searchFilterOptions}
         />
