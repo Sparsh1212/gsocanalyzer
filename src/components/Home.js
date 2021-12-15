@@ -9,10 +9,10 @@ import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
 import LaunchingComponent from './LaunchingComponent';
 import { Link } from 'react-router-dom'
 
-const descendingSortByYear = (resultList) =>{ 
+const descendingSortByYear = (resultList) =>{
   return resultList.sort( (a,b) => { 
-    return (b.year.length - a.year.length)
-   });
+      return (b.year.length - a.year.length)
+    });
 }
 
 const Home = ({bookmarked, setBookmarked}) => {
@@ -77,6 +77,7 @@ const Home = ({bookmarked, setBookmarked}) => {
           <h1 id = 'mainHeader' onClick={reRenderLauncher}> GSoC Analyser </h1>
         </Header>
         <Link to="/bookmarks" className="nav-button">Bookmarks</Link>
+        
         <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />
         {displayLauncher && <LaunchingComponent />}
         {!displayLauncher && (
