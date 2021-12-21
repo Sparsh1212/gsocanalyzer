@@ -8,11 +8,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import data from '../data/finalData.json'
 import AutoComplete from '../utils/AutoComplete'
 
-const { useImperativeHandle } = React
+const { useImperativeHandle } = React;
 
 const AdvancedSearch = forwardRef((props, ref) => {
   const { buildSearchList } = props
-  let inputElement
+  let inputElement;
 
   const _searchBoxHandle = useRef(null)
   const _inputHandle = useRef(null)
@@ -21,22 +21,22 @@ const AdvancedSearch = forwardRef((props, ref) => {
     {
       key: 0,
       text: 'Tech Stack',
-      value: 0,
+      value: 0
     },
     {
       key: 1,
       text: 'Organisation Name',
-      value: 1,
+      value: 1
     },
     {
       key: 2,
       text: 'Category',
-      value: 2,
+      value: 2
     },
     {
       key: 3,
       text: 'Topic',
-      value: 3,
+      value: 3
     },
   ]
 
@@ -50,18 +50,18 @@ const AdvancedSearch = forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     resetSearchState() {
-      setSearch('')
-      setFilter(0)
-      setAutoComplete(null)
-      setSuggestions([])
-    },
+      setSearch('');
+      setFilter(0);
+      setAutoComplete(null);
+      setSuggestions([]);
+    }
   }))
 
   const handleFilter = (unNeccesaryThing, e) => {
     setFilter(e.value)
   }
 
-  const handleSearch = (e) => {
+  const handleSearch = e => {
     e && e.preventDefault()
     document.activeElement.blur()
     buildSearchList(_inputHandle.current.value, filter)
@@ -71,7 +71,7 @@ const AdvancedSearch = forwardRef((props, ref) => {
     // setSuggestions(autoComplete.suggest(search))
     setTimeout(() => {
       setIsInputInFocus(document.activeElement === inputElement)
-    }, 0)
+    }, 0);
   }
 
   useEffect(() => {
@@ -85,11 +85,11 @@ const AdvancedSearch = forwardRef((props, ref) => {
   useEffect(() => {
     let list = []
     if (filter === 0) {
-      let dataSet = new Set()
-      data.forEach((e) => {
+      let dataSet = new Set();
+      data.forEach(e => {
         dataSet.add(...e.tech)
       })
-      list = [...[...dataSet].sort((a, b) => a - b)]
+      list = [...[...dataSet].sort((a, b) => (a - b))]
     }
     if (filter === 1) {
       data.forEach((e) => {
@@ -106,8 +106,8 @@ const AdvancedSearch = forwardRef((props, ref) => {
       })
     }
     if (filter === 3) {
-      let dataSet = new Set()
-      data.forEach((e) => {
+      let dataSet = new Set();
+      data.forEach(e => {
         dataSet.add(...e.top)
       })
       list = [...[...dataSet].sort((a, b) => a - b)]
