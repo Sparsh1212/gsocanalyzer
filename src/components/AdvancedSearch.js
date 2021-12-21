@@ -110,7 +110,7 @@ const AdvancedSearch = forwardRef((props, ref) => {
       data.forEach(e => {
         dataSet.add(...e.top)
       })
-      list = [...[...dataSet].sort((a, b) => a - b)]
+      list = [...[...dataSet].sort((a, b) => (a - b))]
     }
     setAutoComplete(new AutoComplete(list))
     setSuggestions([])
@@ -177,11 +177,11 @@ const AdvancedSearch = forwardRef((props, ref) => {
 
   return (
     <Container textAlign='center'>
-      <form className='search-form' autocomplete='off'>
+      <form className="search-form" autocomplete='off'>
         <div ref={_searchBoxHandle} id='searchBox'>
           <input
             ref={_inputHandle}
-            onChange={(e) => {
+            onChange={e => {
               if (e.keyCode === 13) {
                 handleSearch()
                 return
@@ -191,8 +191,8 @@ const AdvancedSearch = forwardRef((props, ref) => {
             type='text'
             name='search'
             placeholder='Search...'
-            id='inputBox'
-            autocomplete='off'
+            id="inputBox"
+            autocomplete="off"
           />
           {isInputInFocus &&
             suggestions.length > 0 &&
@@ -205,10 +205,6 @@ const AdvancedSearch = forwardRef((props, ref) => {
                         key={content}
                         onClick={() => {
                           setSearch(content)
-                          /**buildSearchList is not needed because it is handled in handleSearch(),
-                           * buildSearchList should be called when clickable route functionality needed,
-                           * since search by keyboard is enabled buildSearchList need not be called
-                           */
                           // buildSearchList(content, filter)
                         }}
                       >
@@ -233,6 +229,6 @@ const AdvancedSearch = forwardRef((props, ref) => {
       </form>
     </Container>
   )
-})
+});
 
 export default AdvancedSearch
