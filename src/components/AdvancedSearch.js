@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from 'react'
+import React, { forwardRef, useEffect, useState, useRef } from 'react'
 import { Container, Dropdown } from 'semantic-ui-react'
 import '../css/mainpagecss.css'
 
@@ -10,10 +10,13 @@ import AutoComplete from '../utils/AutoComplete'
 
 const { useImperativeHandle } = React;
 
-
 const AdvancedSearch = forwardRef((props, ref) => {
   const { buildSearchList } = props
   let inputElement;
+
+  const _searchBoxHandle = useRef(null)
+  const _inputHandle = useRef(null)
+
   const searchFilterOptions = [
     {
       key: 0,
@@ -34,7 +37,7 @@ const AdvancedSearch = forwardRef((props, ref) => {
       key: 3,
       text: 'Topic',
       value: 3
-    }
+    },
   ]
 
   const [search, setSearch] = useState('')
@@ -42,16 +45,17 @@ const AdvancedSearch = forwardRef((props, ref) => {
   const [autoComplete, setAutoComplete] = useState(null)
   const [suggestions, setSuggestions] = useState([])
   const [isInputInFocus, setIsInputInFocus] = useState(false)
+  const [suggestionCopy, setsuggestionCopy] = useState([])
+  let [searchCounter, setsearchCounter] = useState(0)
 
   useImperativeHandle(ref, () => ({
-    resetSearchState () {
+    resetSearchState() {
       setSearch('');
       setFilter(0);
       setAutoComplete(null);
       setSuggestions([]);
-      setIsInputInFocus(false);
     }
-  }));
+  }))
 
   const handleFilter = (unNeccesaryThing, e) => {
     setFilter(e.value)
@@ -60,10 +64,10 @@ const AdvancedSearch = forwardRef((props, ref) => {
   const handleSearch = e => {
     e && e.preventDefault()
     document.activeElement.blur()
-    buildSearchList(search, filter)
+    buildSearchList(_inputHandle.current.value, filter)
   }
-
-  const focusHandler = e => {
+  const focusHandler = (e) => {
+    setsearchCounter(0)
     // setSuggestions(autoComplete.suggest(search))
     setTimeout(() => {
       setIsInputInFocus(document.activeElement === inputElement)
@@ -88,13 +92,17 @@ const AdvancedSearch = forwardRef((props, ref) => {
       list = [...[...dataSet].sort((a, b) => (a - b))]
     }
     if (filter === 1) {
-      data.forEach(e => {
-        list.push(e.name.replaceAll('/', '').replaceAll('  ', ' ').toLowerCase())
+      data.forEach((e) => {
+        list.push(
+          e.name.replaceAll('/', '').replaceAll('  ', ' ').toLowerCase()
+        )
       })
     }
     if (filter === 2) {
-      data.forEach(e => {
-        list.push(e.cat.replaceAll('/', '').replaceAll('  ', ' ').toLowerCase())
+      data.forEach((e) => {
+        list.push(
+          e.cat.replaceAll('/', '').replaceAll('  ', ' ').toLowerCase()
+        )
       })
     }
     if (filter === 3) {
@@ -117,12 +125,62 @@ const AdvancedSearch = forwardRef((props, ref) => {
     autoComplete && setSuggestions(autoComplete.suggest(search))
   }, [search])
 
+  const func = (e) => {
+    if (e.code == 'Enter') {
+      setSearch(suggestionCopy[searchCounter] || _inputHandle.current.value)
+    }
+    if (suggestionCopy.length == 0 && searchCounter == 0) {
+      setsearchCounter(0)
+    } else {
+      if (e.code == 'ArrowDown') {
+        if (searchCounter > suggestionCopy.length - 1) {
+          setsearchCounter(searchCounter--)
+        } else {
+          if (suggestionCopy[searchCounter] == _inputHandle.current.value) {
+            _inputHandle.current.value =
+              suggestionCopy[searchCounter + 1] != undefined
+                ? suggestionCopy[searchCounter + 1]
+                : suggestionCopy[searchCounter]
+          } else {
+            _inputHandle.current.value = suggestionCopy[searchCounter]
+          }
+          setsearchCounter(searchCounter++)
+        }
+      }
+      if (e.code == 'ArrowUp') {
+        searchCounter == 0
+          ? setsearchCounter(0)
+          : setsearchCounter(searchCounter--)
+        if (suggestionCopy[searchCounter] == _inputHandle.current.value) {
+          _inputHandle.current.value =
+            suggestionCopy[searchCounter - 1] != undefined
+              ? suggestionCopy[searchCounter - 1]
+              : suggestionCopy[searchCounter]
+        } else {
+          _inputHandle.current.value = suggestionCopy[searchCounter]
+        }
+      }
+    }
+  }
+
+  useEffect(() => {
+    _searchBoxHandle.current.addEventListener('keydown', func)
+    return () => {
+      _searchBoxHandle.current.removeEventListener('keydown', func)
+    }
+  }, [suggestionCopy])
+
+  useEffect(() => {
+    setsearchCounter(0)
+    setsuggestionCopy(suggestions.map((el) => el))
+  }, [suggestions])
+
   return (
     <Container textAlign='center'>
-      <form className="search-form" autocomplete="off">
-        <div id='searchBox'>
+      <form className="search-form" autocomplete='off'>
+        <div ref={_searchBoxHandle} id='searchBox'>
           <input
-            value={search}
+            ref={_inputHandle}
             onChange={e => {
               if (e.keyCode === 13) {
                 handleSearch()
@@ -136,18 +194,26 @@ const AdvancedSearch = forwardRef((props, ref) => {
             id="inputBox"
             autocomplete="off"
           />
-          {
-            (isInputInFocus && suggestions.length > 0 && suggestions[0] !== search) && (<div className="suggestions-dropDown">
-              {suggestions.map(content => (
-                content !== search && <p
-                  key={content}
-                  onClick={() => {
-                    setSearch(content)
-                    buildSearchList(content, filter)
-                  }}>{content}</p>
-              ))}
-            </div>)
-          }
+          {isInputInFocus &&
+            suggestions.length > 0 &&
+            suggestions[0] !== search && (
+              <div className='suggestions-dropDown'>
+                {suggestions.map(
+                  (content) =>
+                    content !== search && (
+                      <p
+                        key={content}
+                        onClick={() => {
+                          setSearch(content)
+                          // buildSearchList(content, filter)
+                        }}
+                      >
+                        {content}
+                      </p>
+                    )
+                )}
+              </div>
+            )}
         </div>
         <button type='submit' onClick={handleSearch} className='search-btn'>
           <FontAwesomeIcon color='white' className='fa-2x' icon={faSearch} />{' '}
@@ -160,7 +226,6 @@ const AdvancedSearch = forwardRef((props, ref) => {
           selection
           options={searchFilterOptions}
         />
-
       </form>
     </Container>
   )
