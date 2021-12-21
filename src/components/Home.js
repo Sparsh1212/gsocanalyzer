@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Container, Header } from 'semantic-ui-react';
 import '../css/mainpagecss.css';
 import data from '../data/finalData.json';
@@ -8,6 +8,7 @@ import Footer from './Footer';
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
 import LaunchingComponent from './LaunchingComponent';
 import { Link } from 'react-router-dom'
+import { sort0, sort1, sort2 } from './SortFunctions';
 
 const descendingSortByYear = (resultList) =>{
   return resultList.sort( (a,b) => { 
@@ -17,6 +18,9 @@ const descendingSortByYear = (resultList) =>{
 
 const Home = ({bookmarked, setBookmarked}) => {
   const [validList, setValidList] = useState([]);
+  const [results, setResults] = useState(validList);
+  const [sortParameter, setSortParameter] = useState(0)
+  const [sortAscendingOrder, setSortAscendingOrder] = useState(false)
   const [displayLauncher, setDisplayLauncher] = useState(true);
 
   const reRenderLauncher = () => {
@@ -24,6 +28,29 @@ const Home = ({bookmarked, setBookmarked}) => {
     setValidList([]);
     setDisplayLauncher(true);
   };
+
+  useEffect(() => {
+    // setSortAscendingOrder(false);
+    var res = [];
+    switch(sortParameter) {
+      case 0: 
+        res = validList.sort(sort0);
+        break;
+      case 1: 
+        res = validList.sort(sort1);
+        break;
+      case 2: 
+        res = validList.sort(sort2);
+        break;
+    }
+    if(!sortAscendingOrder) {
+      setResults([...res])
+    }
+    else {
+      setResults([...res.reverse()])
+    }
+  }, [sortParameter, validList, sortAscendingOrder])
+
 
   const buildSearchList = (search, filter) => {
     setDisplayLauncher(false);
@@ -78,7 +105,7 @@ const Home = ({bookmarked, setBookmarked}) => {
         </Header>
         <Link to="/bookmarks" className="nav-button">Bookmarks</Link>
         
-        <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} />
+        <AdvancedSearch ref={AdvancedSearchRef} buildSearchList={buildSearchList} sortParameter={sortParameter} setSortParameter={setSortParameter} sortAscendingOrder={sortAscendingOrder} setSortAscendingOrder={setSortAscendingOrder}/>
         {displayLauncher && <LaunchingComponent />}
         {!displayLauncher && (
           <Container fluid style={{ paddingTop: 50 }}>
@@ -91,7 +118,7 @@ const Home = ({bookmarked, setBookmarked}) => {
             </Header>
             <br />
             <br />
-            {descendingSortByYear(validList).map((org, index) => (
+            {results.map((org, index) => (
               <OrganisationCard key={index} orgData={org} bookmarked={bookmarked} setBookmarked={setBookmarked} />
             ))}
           </Container>
