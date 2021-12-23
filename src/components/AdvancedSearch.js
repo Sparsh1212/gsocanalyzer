@@ -176,30 +176,33 @@ const AdvancedSearch = forwardRef((props, ref) => {
         <button type='submit' onClick={handleSearch} className='search-btn'>
           <FontAwesomeIcon color='white' className='fa-2x' icon={faSearch} />{' '}
         </button>
-        <div className='dropdown-panel'>
-        <div id="dropdown-label">Search By</div>
-        <Dropdown
-          value={filter}
-          onChange={handleFilter}
-          id='searchFilter'
-          selection
-          options={searchFilterOptions}
-        />
-        </div>
-        <div className='dropdown-panel'>
-        <div id="dropdown-label">Sort By</div>
-        <Dropdown
-          value={sortParameter}
-          onChange={handleSortParameter}
-          id='sortParameter'
-          selection
-          options={sortParameterOptions}
-        />
-        <img className="sort-icon" src={sortAscendingOrder ? sortAscending : sortDescending} onClick={() => {setSortAscendingOrder(!sortAscendingOrder)}} />
-        </div>
+        
 
 
       </form>
+      <div className="dropdown-menu">
+        <div className='dropdown-panel'>
+          <div id="dropdown-label">Search By</div>
+          <Dropdown
+            value={filter}
+            onChange={handleFilter}
+            id='searchFilter'
+            selection
+            options={searchFilterOptions}
+          />
+        </div>
+        <div className='dropdown-panel sort-panel'>
+          <div id="dropdown-label">Sort By</div>
+          <Dropdown
+            value={sortParameter}
+            onChange={handleSortParameter}
+            id='sortParameter'
+            selection
+            options={sortParameterOptions}
+          />
+          <img className="sort-icon" src={sortAscendingOrder ? sortAscending : sortDescending} onClick={() => {setSortAscendingOrder(!sortAscendingOrder)}} />
+        </div>
+      </div>
     </Container>
   )
 });
