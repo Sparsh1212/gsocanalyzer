@@ -45,6 +45,11 @@
 
 import json
 
+try:
+    input = raw_input
+except NameError:
+    pass
+
 num = int(input("number of duplicate entries, including the original one: "))
 dupNames = []
 print("\nenter the exact names of the orgs to be merged, the first name entered will be saved to the final org\n")
@@ -57,7 +62,7 @@ f = open('src/data/finalData.json')
 data = json.load(f)
 f.close()
 
-temporaryDupNames = dupNames.copy()
+temporaryDupNames = dupNames[:]
 dupOrgs = []
 sanitizedOrg = {}
 sanitizedOrg['name'] = dupNames[0]
