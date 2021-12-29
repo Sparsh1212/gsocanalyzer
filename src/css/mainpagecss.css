@@ -1,14 +1,19 @@
 #mainContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   padding-top: 15px;
   background-color: black;
   font-family: monospace;
   color: white;
-  width: 100%;
 }
-#summaryBtn{
+#content-container {
+  padding-bottom: 2.5rem;
+}
+#summaryBtn {
   border: 1px solid black;
-  padding:6px 10px;
-  border-radius:6px;
+  padding: 6px 10px;
+  border-radius: 6px;
   margin-top: 18px;
 }
 
@@ -47,7 +52,7 @@
   position: absolute;
   top: 50px;
   right: 50px;
-  background: #FFFFFF;
+  background: #ffffff;
   color: #000000;
   font-weight: 900;
   font-size: 20px;
@@ -68,7 +73,7 @@
 .clear-storage-btn {
   bottom: 85px;
   left: 50px;
-  background: #FFFFFF;
+  background: #ffffff;
   color: #000000;
   font-weight: 900;
   font-size: 16px;
@@ -90,7 +95,6 @@
   width: 100%;
   color: greenyellow;
 }
-
 
 .suggestions-dropDown::-webkit-scrollbar-thumb {
   background-color: greenyellow;
@@ -147,7 +151,6 @@
     outline: none;
     color: white;
   }
-
 }
 
 ::placeholder {
@@ -282,12 +285,11 @@ a:not #urlLocator {
 }
 
 #footer {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   width: 10000px;
-  margin-top: 60vh;
   font-weight: 100;
   padding: 20px;
-  background-color: black;
 }
 
 @media (max-width: 750px) {
