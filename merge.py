@@ -50,13 +50,15 @@ try:
 except NameError:
     pass
 
-num = int(input("number of duplicate entries, including the original one: "))
+num = int(input("Number of duplicate entries, including the original one: "))
 dupNames = []
-print("\nenter the exact names of the orgs to be merged, the first name entered will be saved to the final org\n")
+print("Enter the exact names of the orgs to be merged, the first name entered will be saved to the final org:\n")
 
 for i in range(num):
     _ = input()
     dupNames.append(_)
+
+indexForFirstOrg = -1
 
 f = open('src/data/finalData.json')
 data = json.load(f)
@@ -65,15 +67,20 @@ f.close()
 temporaryDupNames = dupNames[:]
 dupOrgs = []
 sanitizedOrg = {}
+sanitizedOrg['url'] = ''
 sanitizedOrg['name'] = dupNames[0]
-sanitizedOrg['top'] = []
 sanitizedOrg['tech'] = []
+sanitizedOrg['cat'] = ''
+sanitizedOrg['top'] = []
+sanitizedOrg['year'] = []
+sanitizedOrg['project'] = []
 
 
-for org in data:
+for i, org in enumerate(data):
     if org['name'] in temporaryDupNames:
 
         if org['name'] == dupNames[0]:
+            indexForFirstOrg = i
             sanitizedOrg['url'] = org['url']
             sanitizedOrg['cat'] = org['cat']
 
@@ -114,12 +121,17 @@ for i in range(13):
     
     sanitizedOrg['project'].append(numberOfProjects)
 
-data[:] = [d for d in data if not d['name'] in dupNames]
+del data[indexForFirstOrg]
+data.insert(indexForFirstOrg, sanitizedOrg)
 
-data.append(sanitizedOrg)
+firstOrgName = dupNames[0];
+del dupNames[0];
+
+data[:] = [d for d in data if not d['name'] in dupNames]
 
 with open('src/data/finalData.json', 'w') as fout:
     json.dump(data , fout, indent = 6)
 
-print("\n\nSuccessfully merged:\n")
+print("\n\nSuccessfully merged:")
 print("\n".join(dupNames))
+print("\nto:\n" + firstOrgName)
