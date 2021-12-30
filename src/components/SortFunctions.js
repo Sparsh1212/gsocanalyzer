@@ -1,8 +1,8 @@
-export function sort0(a, b) {
+export function sortAppearances(a, b) {
     return (b.year.length - a.year.length);
   }
 
-export function sort1(a, b) {
+export function sortTotalProjects(a, b) {
     const findSum = (a) => {
         var sum = 0;
         a.year.map((instance) => {
@@ -13,7 +13,7 @@ export function sort1(a, b) {
     return (findSum(b) - findSum(a));
   }
 
-export function sort2(a, b) {
+export function sortAverageProjects(a, b) {
     const findAvg = (a) => {
       var sum = 0;
       a.year.map((instance) => {

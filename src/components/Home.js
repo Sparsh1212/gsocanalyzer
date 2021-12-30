@@ -8,7 +8,7 @@ import Footer from './Footer';
 import { VerticleButton as ScrollUpButton } from 'react-scroll-up-button';
 import LaunchingComponent from './LaunchingComponent';
 import { Link } from 'react-router-dom'
-import { sort0, sort1, sort2 } from './SortFunctions';
+import { sortAppearances, sortTotalProjects, sortAverageProjects } from './SortFunctions';
 
 const descendingSortByYear = (resultList) =>{
   return resultList.sort( (a,b) => { 
@@ -34,13 +34,13 @@ const Home = ({bookmarked, setBookmarked}) => {
     var res = [];
     switch(sortParameter) {
       case 0: 
-        res = validList.sort(sort0);
+        res = validList.sort(sortAppearances);
         break;
       case 1: 
-        res = validList.sort(sort1);
+        res = validList.sort(sortTotalProjects);
         break;
       case 2: 
-        res = validList.sort(sort2);
+        res = validList.sort(sortAverageProjects);
         break;
     }
     if(!sortAscendingOrder) {
