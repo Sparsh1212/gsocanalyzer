@@ -130,7 +130,7 @@ del dupNames[0];
 data[:] = [d for d in data if not d['name'] in dupNames]
 
 with open('src/data/finalData.json', 'w') as fout:
-    json.dump(data , fout, indent = 6, sort_keys=False)
+    json.dump(data , fout, indent = 4, sort_keys=False)
 
 print("\n\nSuccessfully merged:")
 print("\n".join(dupNames))
