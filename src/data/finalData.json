@@ -1079,14 +1079,16 @@
         ]
     },
     {
-        "name": "International Catrobat Association",
         "url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5201744182640640/",
+        "name": "International Catrobat Association",
         "tech": [
             "android",
             "swift",
             "php",
             "javascript",
-            "kotlin"
+            "kotlin",
+            "java",
+            "ios"
         ],
         "cat": "Programming Languages and Development Tools",
         "top": [
@@ -1094,9 +1096,16 @@
             "mobile programming",
             "game engines",
             "creativity tools",
-            "education"
+            "education",
+            "app development",
+            "gaming"
         ],
         "year": [
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
             2021
         ],
         "project": [
@@ -1107,11 +1116,11 @@
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
+            7,
+            5,
+            5,
+            9,
+            12,
             13
         ]
     },
@@ -2330,47 +2339,6 @@
         ]
     },
     {
-        "url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5135086290206720/",
-        "name": "AOSSIE",
-        "tech": [
-            "javascript",
-            "swift",
-            "kotlin",
-            "python",
-            "scala",
-            "machine learning",
-            "android",
-            "ios"
-        ],
-        "cat": "End User Applications",
-        "top": [
-            "electronic voting",
-            "natural language processing",
-            "machine learning",
-            "environment",
-            "social science"
-        ],
-        "year": [
-            2021,
-            2020
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            9,
-            11
-        ]
-    },
-    {
         "url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5702681049432064/",
         "name": "Apertium",
         "tech": [
@@ -2901,47 +2869,6 @@
             0,
             3,
             9
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2020/organizations/5707287336845312/",
-        "name": "Catrobat",
-        "tech": [
-            "java",
-            "android",
-            "swift",
-            "ios",
-            "php"
-        ],
-        "cat": "Programming Languages and Development Tools",
-        "top": [
-            "visual programming",
-            "app development",
-            "gaming",
-            "creativity tools",
-            "education"
-        ],
-        "year": [
-            2020,
-            2019,
-            2018,
-            2017,
-            2016
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            7,
-            5,
-            5,
-            9,
-            12,
-            0
         ]
     },
     {
@@ -8645,47 +8572,6 @@
         ]
     },
     {
-        "url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5416561266917376/",
-        "name": "SCoRe Lab",
-        "tech": [
-            "python",
-            "mobile",
-            "cloud",
-            "web development",
-            "machine learning",
-            "nodejs",
-            "android",
-            "golang"
-        ],
-        "cat": "End User Applications",
-        "top": [
-            "information security",
-            "mobile",
-            "cloud",
-            "web development",
-            "machine learning"
-        ],
-        "year": [
-            2021,
-            2020
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            25,
-            23
-        ]
-    },
-    {
         "url": "https://summerofcode.withgoogle.com/archive/2021/organizations/5723178982178816/",
         "name": "ScummVM",
         "tech": [
@@ -9643,7 +9529,8 @@
             "java",
             "angular",
             "mysql",
-            "spring"
+            "spring",
+            "angularjs"
         ],
         "cat": "End User Applications",
         "top": [
@@ -9651,12 +9538,18 @@
             "mobile banking",
             "cloud",
             "big data",
-            "web"
+            "web",
+            "digital financial services",
+            "microfinance",
+            "financial inclusion"
         ],
         "year": [
-            2020,
+            2014,
+            2016,
+            2017,
+            2018,
             2019,
-            2018
+            2020
         ],
         "project": [
             0,
@@ -9664,10 +9557,10 @@
             0,
             0,
             0,
+            7,
             0,
-            0,
-            0,
-            0,
+            6,
+            10,
             12,
             14,
             17,
@@ -10273,45 +10166,6 @@
             4,
             5,
             4,
-            0,
-            0
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4551437139312640/",
-        "name": "AOSSIE - Australian Open Source Software Innovation and Education",
-        "tech": [
-            "scala",
-            "javascript",
-            "isabelle proof assistant",
-            "android",
-            "ios"
-        ],
-        "cat": "End User Applications",
-        "top": [
-            "electronic voting",
-            "natural language processing",
-            "environment",
-            "machine learning",
-            "philosophy"
-        ],
-        "year": [
-            2019,
-            2018,
-            2017
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            13,
-            13,
-            18,
             0,
             0
         ]
@@ -12527,42 +12381,6 @@
             0,
             0,
             2,
-            0,
-            0
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2019/organizations/4922378566500352/",
-        "name": "SCoRe Lab (Sustainable Computing Research Lab)",
-        "tech": [
-            "python",
-            "nodejs",
-            "android",
-            "golang"
-        ],
-        "cat": "Security",
-        "top": [
-            "information security",
-            "mobile",
-            "cloud",
-            "web development",
-            "machine learning"
-        ],
-        "year": [
-            2019
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            27,
             0,
             0
         ]
@@ -15520,78 +15338,6 @@
         ]
     },
     {
-        "url": "https://summerofcode.withgoogle.com/archive/2018/organizations/5745237494333440/",
-        "name": "Sustainable Computing Research Group (SCoRe)",
-        "tech": [
-            "android",
-            "java",
-            "go",
-            "node",
-            "pyth"
-        ],
-        "cat": "Web",
-        "top": [
-            "iot",
-            "web",
-            "mobile",
-            "machine learning",
-            "security"
-        ],
-        "year": [
-            2018
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            18,
-            0,
-            0,
-            0
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6321870005600256/",
-        "name": "Systers Community",
-        "tech": [
-            "ios",
-            "android",
-            "python",
-            "ruby on rails",
-            "javascript"
-        ],
-        "cat": "Other",
-        "top": [
-            "mobile applications",
-            " web apps",
-            "community"
-        ],
-        "year": [
-            2018
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            11,
-            0,
-            0,
-            0
-        ]
-    },
-    {
         "url": "https://summerofcode.withgoogle.com/archive/2018/organizations/6265117784145920/",
         "name": "TEAMMATES @ National University of Singapore",
         "tech": [
@@ -16964,45 +16710,6 @@
         ]
     },
     {
-        "url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5486404108812288/",
-        "name": "Mifos Initiative",
-        "tech": [
-            "java",
-            "android",
-            "angularjs",
-            "spring",
-            "mysql"
-        ],
-        "cat": "End User Applications",
-        "top": [
-            "fintech",
-            "mobile banking",
-            "digital financial services",
-            "microfinance",
-            "financial inclusion"
-        ],
-        "year": [
-            2017,
-            2016,
-            2014
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            7,
-            0,
-            6,
-            10,
-            0,
-            0,
-            0,
-            0
-        ]
-    },
-    {
         "url": "https://summerofcode.withgoogle.com/archive/2017/organizations/4814565460148224/",
         "name": "Mono Project",
         "tech": [
@@ -17453,22 +17160,41 @@
         "name": "Sustainable Computing Research Group ( SCoRe )",
         "tech": [
             "python",
-            "java",
-            "gcp",
+            "mobile",
+            "cloud",
+            "web development",
+            "machine learning",
+            "nodejs",
             "android",
+            "golang",
+            "java",
+            "go",
+            "node",
+            "pyth",
+            "gcp",
             "golan"
         ],
         "cat": "End User Applications",
         "top": [
+            "information security",
+            "mobile",
+            "cloud",
+            "web development",
+            "machine learning",
             "iot",
+            "web",
             "security",
             "mobile applications",
             "embedded systems"
         ],
         "year": [
-            2017,
+            2015,
             2016,
-            2015
+            2017,
+            2018,
+            2019,
+            2020,
+            2021
         ],
         "project": [
             0,
@@ -17480,44 +17206,56 @@
             3,
             7,
             16,
-            0,
-            0,
-            0,
-            0
+            18,
+            27,
+            25,
+            23
         ]
     },
     {
         "url": "https://summerofcode.withgoogle.com/archive/2017/organizations/5429781541683200/",
         "name": "Systers, an Anita Borg Institute community",
         "tech": [
-            "android",
             "ios",
+            "android",
             "python",
+            "ruby on rails",
+            "javascript",
             "java",
-            "javascript"
+            "mysql"
         ],
         "cat": "Other",
         "top": [
+            "mobile applications",
+            " web apps",
+            "community",
             "women in tech",
             "games",
             "peace corps",
             "web",
-            "mobile"
+            "mobile",
+            "systers",
+            "women in open source"
         ],
         "year": [
-            2017
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018
         ],
         "project": [
             0,
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
+            6,
+            13,
+            22,
+            19,
             11,
-            0,
+            11,
             0,
             0,
             0
@@ -17927,14 +17665,27 @@
         "url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5127141637226496/",
         "name": "AOSSIE - The Australian National University's Open-Source Software Innovation and Education",
         "tech": [
+            "javascript",
+            "swift",
+            "kotlin",
+            "python",
             "scala",
+            "machine learning",
+            "android",
+            "ios",
+            "isabelle proof assistant",
             "lisp",
             "llvm",
-            "python",
             "postgresql"
         ],
         "cat": "Science and Medicine",
         "top": [
+            "electronic voting",
+            "natural language processing",
+            "machine learning",
+            "environment",
+            "social science",
+            "philosophy",
             "logic",
             "live programming",
             "data analysis",
@@ -17942,7 +17693,12 @@
             "privacy"
         ],
         "year": [
-            2016
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021
         ],
         "project": [
             0,
@@ -17953,11 +17709,11 @@
             0,
             0,
             6,
-            0,
-            0,
-            0,
-            0,
-            0
+            13,
+            13,
+            18,
+            9,
+            11
         ]
     },
     {
@@ -19486,44 +19242,6 @@
             0,
             0,
             3,
-            0,
-            0,
-            0,
-            0,
-            0
-        ]
-    },
-    {
-        "url": "https://summerofcode.withgoogle.com/archive/2016/organizations/5689792285114368/",
-        "name": "Systers, an Anita Borg Institute Community",
-        "tech": [
-            "python",
-            "android",
-            "ios",
-            "mysql",
-            "ruby on rails"
-        ],
-        "cat": "",
-        "top": [
-            "women in tech",
-            "systers",
-            "women in open source"
-        ],
-        "year": [
-            2016,
-            2015,
-            2014,
-            2013
-        ],
-        "project": [
-            0,
-            0,
-            0,
-            0,
-            6,
-            13,
-            22,
-            19,
             0,
             0,
             0,
