@@ -4,6 +4,8 @@ import '../css/mainpagecss.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import sortAscending from '../assets/sort-ascending.svg'
+import sortDescending from '../assets/sort-descending.svg'
 
 import data from '../data/finalData.json'
 import AutoComplete from '../utils/AutoComplete'
@@ -12,7 +14,7 @@ const { useImperativeHandle } = React;
 
 
 const AdvancedSearch = forwardRef((props, ref) => {
-  const { buildSearchList } = props
+  const { buildSearchList, sortParameter, setSortParameter, sortAscendingOrder, setSortAscendingOrder } = props
   let inputElement;
   const searchFilterOptions = [
     {
@@ -37,6 +39,24 @@ const AdvancedSearch = forwardRef((props, ref) => {
     }
   ]
 
+  const sortParameterOptions = [
+    {
+      key: 0,
+      text: 'Number of GSoC Appearances',
+      value: 0
+    },
+    {
+      key: 1,
+      text: 'Total Number of Projects',
+      value: 1
+    },
+    {
+      key: 2,
+      text: 'Average Number of Projects',
+      value: 2
+    },
+  ]
+
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState(0)
   const [autoComplete, setAutoComplete] = useState(null)
@@ -55,6 +75,10 @@ const AdvancedSearch = forwardRef((props, ref) => {
 
   const handleFilter = (unNeccesaryThing, e) => {
     setFilter(e.value)
+  }
+
+  const handleSortParameter = (unNeccesaryThing, e) => {
+    setSortParameter(e.value)
   }
 
   const handleSearch = e => {
@@ -152,16 +176,33 @@ const AdvancedSearch = forwardRef((props, ref) => {
         <button type='submit' onClick={handleSearch} className='search-btn'>
           <FontAwesomeIcon color='white' className='fa-2x' icon={faSearch} />{' '}
         </button>
+        
 
-        <Dropdown
-          value={filter}
-          onChange={handleFilter}
-          id='searchFilter'
-          selection
-          options={searchFilterOptions}
-        />
 
       </form>
+      <div className="dropdown-menu">
+        <div className='dropdown-panel'>
+          <div id="dropdown-label">Search By</div>
+          <Dropdown
+            value={filter}
+            onChange={handleFilter}
+            id='searchFilter'
+            selection
+            options={searchFilterOptions}
+          />
+        </div>
+        <div className='dropdown-panel sort-panel'>
+          <div id="dropdown-label">Sort By</div>
+          <Dropdown
+            value={sortParameter}
+            onChange={handleSortParameter}
+            id='sortParameter'
+            selection
+            options={sortParameterOptions}
+          />
+          <img className="sort-icon" src={sortAscendingOrder ? sortAscending : sortDescending} onClick={() => {setSortAscendingOrder(!sortAscendingOrder)}} />
+        </div>
+      </div>
     </Container>
   )
 });

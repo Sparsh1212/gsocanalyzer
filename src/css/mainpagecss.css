@@ -26,6 +26,38 @@
   border-top: none;
 }
 
+.dropdown-menu {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
+  margin-top: 40px;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.dropdown-panel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+}
+
+#dropdown-label {
+  position: absolute;
+  font-size: 10px;
+  z-index: 1;
+  color: greenyellow;
+  top: 0px;
+}
+
+.sort-icon {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
 .bookmark-icon {
   position: absolute;
   top: 10px;
@@ -187,6 +219,14 @@
     color: white;
     width: 75%;
   }
+  #sortParameter {
+    background-color: black;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: purple;
+    color: white;
+  }
 }
 
 @media (min-width: 750px) {
@@ -197,6 +237,14 @@
     font-size: 20px;
     color: purple;
     color: white;
+  }
+  #sortParameter {
+    background-color: black;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: purple;
+    color: white;  
   }
 }
 
@@ -300,6 +348,13 @@ a:not #urlLocator {
     color: greenyellow;
     font-weight: bold;
     display: inline-block;
+  }
+  .dropdown-menu {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dropdown-panel {
+    width: fit-content;
   }
 }
 
