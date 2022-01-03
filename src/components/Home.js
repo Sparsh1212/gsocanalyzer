@@ -100,6 +100,7 @@ const Home = ({bookmarked, setBookmarked}) => {
   return (
     <React.Fragment>
       <Container id='mainContainer' fluid>
+        <Container id="content-container" fluid>
         <Header textAlign='center'>
           <h1 id = 'mainHeader' onClick={reRenderLauncher}> GSoC Analyser </h1>
         </Header>
@@ -125,6 +126,7 @@ const Home = ({bookmarked, setBookmarked}) => {
         )}
         <ScrollUpButton style={{ color: 'white' }} />
         <Footer />
+        </Container>
       </Container>
     </React.Fragment>
   );

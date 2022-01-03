@@ -17,6 +17,7 @@ function Bookmarked({bookmarked, setBookmarked}) {
     return (
     <React.Fragment>
       <Container id='mainContainer' fluid>
+        <Container id="content-container" fluid>
         <Header id='mainHeader' as='h1' textAlign='center'>
           GSoC Analyzer
         </Header>
@@ -40,6 +41,7 @@ function Bookmarked({bookmarked, setBookmarked}) {
           </Container>
         <ScrollUpButton style={{ color: 'white' }} />
         <Footer />
+        </Container>
       </Container>
     </React.Fragment>
     )
