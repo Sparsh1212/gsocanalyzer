@@ -6,14 +6,15 @@
   background-color: black;
   font-family: monospace;
   color: white;
+ 
 }
 #content-container {
   padding-bottom: 2.5rem;
 }
-#summaryBtn {
+#summaryBtn{
   border: 1px solid black;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding:6px 10px;
+  border-radius:6px;
   margin-top: 18px;
 }
 
@@ -52,7 +53,7 @@
   position: absolute;
   top: 50px;
   right: 50px;
-  background: #ffffff;
+  background: #FFFFFF;
   color: #000000;
   font-weight: 900;
   font-size: 20px;
@@ -73,7 +74,7 @@
 .clear-storage-btn {
   bottom: 85px;
   left: 50px;
-  background: #ffffff;
+  background: #FFFFFF;
   color: #000000;
   font-weight: 900;
   font-size: 16px;
@@ -95,6 +96,7 @@
   width: 100%;
   color: greenyellow;
 }
+
 
 .suggestions-dropDown::-webkit-scrollbar-thumb {
   background-color: greenyellow;
@@ -151,6 +153,7 @@
     outline: none;
     color: white;
   }
+
 }
 
 ::placeholder {
