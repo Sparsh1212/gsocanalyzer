@@ -39,8 +39,8 @@ function Bookmarked({bookmarked, setBookmarked}) {
               No organizations bookmarked yet
             </div>}
           </Container>
-        <ScrollUpButton style={{ color: 'white' }} />
         <Footer />
+        <ScrollUpButton style={{ color: 'white' }} />
         </Container>
       </Container>
     </React.Fragment>
