@@ -336,7 +336,7 @@ a:not #urlLocator {
 }
 
 #footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 10000px;
   font-weight: 100;
