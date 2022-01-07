@@ -124,8 +124,8 @@ const Home = ({bookmarked, setBookmarked}) => {
             ))}
           </Container>
         )}
-        <ScrollUpButton style={{ color: 'white' }} />
         <Footer />
+        <ScrollUpButton style={{ color: 'white' }} />
         </Container>
       </Container>
     </React.Fragment>
