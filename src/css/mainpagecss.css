@@ -1,9 +1,15 @@
 #mainContainer {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   padding-top: 15px;
   background-color: black;
   font-family: monospace;
   color: white;
-  width: 100%;
+ 
+}
+#content-container {
+  padding-bottom: 2.5rem;
 }
 #summaryBtn{
   border: 1px solid black;
@@ -331,11 +337,10 @@ a:not #urlLocator {
 
 #footer {
   position: relative;
+  bottom: 0;
   width: 10000px;
-  margin-top: 60vh;
   font-weight: 100;
   padding: 20px;
-  background-color: black;
 }
 
 @media (max-width: 750px) {
