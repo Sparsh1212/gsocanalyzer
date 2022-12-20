@@ -39,9 +39,15 @@ for year in reversed(range(2016,2023)):
     urlo=base+(org[i].attrs['href'])
     print(urlo)
     pg.get(urlo)
-    sleep(5)
+    sleep(8)
     sp=BeautifulSoup(pg.page_source,'html5lib')
-    name=sp.find('span','title').string
+    try:
+      name=sp.find('span','title').string
+    except:
+       pg.get(urlo)
+       sleep(8)
+       sp=BeautifulSoup(pg.page_source,'html5lib')
+       name=sp.find('span','title').string
     f=0
     for d in data:
       if d['name']==name:
