@@ -104,7 +104,7 @@ if (len(temporaryDupNames) > 0):
 sanitizedOrg['year'] = []
 sanitizedOrg['project'] = []
 
-for i in range(13):
+for i in range(14):
     numberOfProjects = 0
     for org in dupOrgs:
         if org['project'][i] != 0:

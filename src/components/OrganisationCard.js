@@ -64,10 +64,6 @@ const OrganisationCard = ({ key, orgData, bookmarked, setBookmarked }) => {
           )}
 
           <h3 className="family">
-            Category: {orgData.cat != "" ? orgData.cat : "Others"}
-          </h3>
-
-          <h3 className="family">
             Tech Stack <br />
             <div>
               {orgData.tech.map((tech) => (
