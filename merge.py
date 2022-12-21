@@ -104,7 +104,7 @@ if (len(temporaryDupNames) > 0):
 sanitizedOrg['year'] = []
 sanitizedOrg['project'] = []
 
-for i in range(13):
+for i in range(14):
     numberOfProjects = 0
     for org in dupOrgs:
         if org['project'][i] != 0:
@@ -124,8 +124,8 @@ for i in range(13):
 del data[indexForFirstOrg]
 data.insert(indexForFirstOrg, sanitizedOrg)
 
-firstOrgName = dupNames[0];
-del dupNames[0];
+firstOrgName = dupNames[0]
+del dupNames[0]
 
 data[:] = [d for d in data if not d['name'] in dupNames]
 
