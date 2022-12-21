@@ -7,6 +7,10 @@ from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
 
+# adjust the sleep timers according to your connection speed and run the script
+
+# if you get error for element not found recheck the class names in the website incase they have changed
+
 base="https://summerofcode.withgoogle.com"
 data=[]
 pg=webdriver.Chrome(executable_path="/Applications/driver/chromedriver")
@@ -25,7 +29,6 @@ for year in reversed(range(2016,2023)):
     if next_page.get_property('disabled'):
       break
     next_page.click()
-       # next_page = pg.find_element(By.XPATH, '//button[contains(@class, "mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-next mat-icon-button mat-button-base")]')
     print(next_page.get_property('disabled'))
     sleep(2)
     soup=BeautifulSoup(pg.page_source,'html5lib')
@@ -37,7 +40,6 @@ for year in reversed(range(2016,2023)):
   for i in range(len(org)):
     dic={}
     urlo=base+(org[i].attrs['href'])
-    print(urlo)
     pg.get(urlo)
     sleep(8)
     sp=BeautifulSoup(pg.page_source,'html5lib')
@@ -60,18 +62,13 @@ for year in reversed(range(2016,2023)):
       dic['url']=urlo
       dic['name']=sp.find('span','title').string
       tech_string = sp.find('div',"tech__content").string
-      print(tech_string)
       tech=tech_string.split(',')
       for j in range(len(tech)):
         tech[j]=tech[j].strip()
       dic['tech']=tech
-      # cat = sp.find('li', attrs={'class': 'organization__tag organization__tag--category'})
-      # te=cat.text.replace('\n','')
-      # te=te.replace('\t','')
       dic['cat']=''
       topic_string = sp.find('div','topics__content').string
       top=topic_string.split(',')
-      print(top)
       for j in range(len(top)):
         top[j]=top[j].strip()
       dic['top']=top
@@ -79,7 +76,6 @@ for year in reversed(range(2016,2023)):
       proj=sp.find_all('div',"contributor__content")
       dic['proj']=[len(proj)]
       data.append(dic)
-print (data,'oooo')
 for year in reversed(range(2009,2016)):
   url="https://www.google-melange.com/archive/gsoc/"+str(year)
   base="https://www.google-melange.com"
@@ -118,7 +114,6 @@ for d in data:
         break
     if f==1:d['project'].append(0)
   d.pop('proj') 
-print(data,'lololo')
 with open('data.json', 'w') as fout:
     json.dump(data , fout,indent = 6)
     print(data)

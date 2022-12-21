@@ -124,8 +124,8 @@ for i in range(14):
 del data[indexForFirstOrg]
 data.insert(indexForFirstOrg, sanitizedOrg)
 
-firstOrgName = dupNames[0];
-del dupNames[0];
+firstOrgName = dupNames[0]
+del dupNames[0]
 
 data[:] = [d for d in data if not d['name'] in dupNames]
 
