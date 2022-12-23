@@ -104,7 +104,7 @@ const Home = ({ bookmarked, setBookmarked }) => {
         <Header textAlign="center">
           <h1 id="mainHeader" onClick={reRenderLauncher}>
             {" "}
-            GSoC Analzser{" "}
+            GSoC Analyzer{" "}
           </h1>
         </Header>
         <Link to="/bookmarks" className="nav-button">
