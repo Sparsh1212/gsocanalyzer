@@ -1,11 +1,18 @@
 import React from "react";
-import { Bar, defaults } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import {
+  defaults,
+  Chart,
+  CategoryScale,
+  BarElement,
+  PointElement,
+  Legend,
+  Tooltip,
+} from "chart.js";
 import "../../css/graphcss.css";
-
-defaults.global.tooltips.enabled = true;
-defaults.global.legend.position = "bottom";
-
 const ParticipantChart = (props) => {
+  Chart.defaults.font.size = props.font;
+  Chart.register(CategoryScale, BarElement, PointElement, Legend, Tooltip);
   return (
     <div className="gsocChart">
       <Bar
@@ -13,7 +20,7 @@ const ParticipantChart = (props) => {
           labels: [
             "2005",
             "2006",
-            "2006",
+            "2007",
             "2008",
             "2009",
             "2010",
@@ -44,8 +51,8 @@ const ParticipantChart = (props) => {
             {
               label: "Sucessful participants",
               data: [
-                328, 516.6, 733.05, 935, 850, 913.14, 981, 1073, 1060, 1172,
-                927, 1032, 1136, 1090, 1136, 1106, 1205, 1054,
+                328, 516, 733, 935, 850, 913, 981, 1073, 1060, 1172, 927, 1032,
+                1136, 1090, 1136, 1106, 1205, 1054,
               ],
               backgroundColor: "orange",
               borderColor: "red",
@@ -55,18 +62,36 @@ const ParticipantChart = (props) => {
         }}
         options={{
           maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: "bottom",
+            },
+            tooltip: {
+              enabled: true,
+            },
+          },
           scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
+            y: {
+              beginAtZero: true,
+              ticks: {
+                font: {
+                  size: 12,
                 },
               },
-            ],
+            },
+            x: {
+              beginAtZero: true,
+              ticks: {
+                font: {
+                  size: 12,
+                },
+              },
+            },
           },
           legend: {
             labels: {
-              fontSize: props.font,
+              font: { size: props.font },
             },
           },
         }}

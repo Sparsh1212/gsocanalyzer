@@ -4,8 +4,8 @@ import "../css/mainpagecss.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import sortAscending from "../assets/sort-ascending.svg";
-import sortDescending from "../assets/sort-descending.svg";
+import SortAscending from "../assets/sort-ascending.js";
+import SortDescending from "../assets/sort-descending.js";
 
 import data from "../data/finalData.json";
 import AutoComplete from "../utils/AutoComplete";
@@ -143,11 +143,11 @@ const AdvancedSearch = forwardRef((props, ref) => {
 
   useEffect(() => {
     autoComplete && setSuggestions(autoComplete.suggest(search));
-  }, [search]);
+  }, [search, autoComplete]);
 
   return (
     <Container textAlign="center">
-      <form className="search-form" autocomplete="off">
+      <form className="search-form" autoComplete="off">
         <div id="searchBox">
           <input
             value={search}
@@ -162,7 +162,7 @@ const AdvancedSearch = forwardRef((props, ref) => {
             name="search"
             placeholder="Search..."
             id="inputBox"
-            autocomplete="off"
+            autoComplete="off"
           />
           {isInputInFocus &&
             suggestions.length > 0 &&
@@ -209,13 +209,21 @@ const AdvancedSearch = forwardRef((props, ref) => {
             selection
             options={sortParameterOptions}
           />
-          <img
-            className="sort-icon"
-            src={sortAscendingOrder ? sortAscending : sortDescending}
-            onClick={() => {
-              setSortAscendingOrder(!sortAscendingOrder);
-            }}
-          />
+          {sortAscendingOrder ? (
+            <SortAscending
+              className="sort-icon"
+              onClick={() => {
+                setSortAscendingOrder(!sortAscendingOrder);
+              }}
+            />
+          ) : (
+            <SortDescending
+              className="sort-icon"
+              onClick={() => {
+                setSortAscendingOrder(!sortAscendingOrder);
+              }}
+            />
+          )}
         </div>
       </div>
     </Container>
