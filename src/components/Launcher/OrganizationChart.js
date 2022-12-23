@@ -1,19 +1,38 @@
 import React from "react";
-import { HorizontalBar, defaults } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
+import {
+  defaults,
+  Chart,
+  CategoryScale,
+  BarElement,
+  PointElement,
+  Legend,
+  Tooltip,
+  BarController,
+} from "chart.js";
 import "../../css/graphcss.css";
 
-defaults.global.tooltips.enabled = true;
-defaults.global.legend.position = "bottom";
+// Chart.defaults.plugins.tooltip.enabled = true;
+// Chart.defaults.plugins.legend.position = "bottom";
 
 const OrganizationChart = (props) => {
+  // Chart.defaults.font.size = props.font;
+  Chart.register(
+    CategoryScale,
+    BarElement,
+    PointElement,
+    Legend,
+    Tooltip,
+    BarController
+  );
   return (
     <div className="gsocChart" id="company">
-      <HorizontalBar
+      <Bar
         data={{
           labels: [
             "2005",
             "2006",
-            "2006",
+            "2007",
             "2008",
             "2009",
             "2010",
@@ -45,18 +64,29 @@ const OrganizationChart = (props) => {
         }}
         options={{
           maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: "bottom",
+            },
+            tooltip: {
+              enabled: true,
+            },
+          },
           scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
+            y: {
+              beginAtZero: true,
+              ticks: {
+                font: {
+                  size: 14,
                 },
               },
-            ],
+            },
           },
+          indexAxis: "y",
           legend: {
-            labels: {
-              fontSize: props.font,
+            title: {
+              font: { size: 50, weight: "bold" },
             },
           },
         }}

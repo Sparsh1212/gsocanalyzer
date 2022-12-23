@@ -1,11 +1,27 @@
 import React from "react";
-import { Line, defaults } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
+import {
+  defaults,
+  Chart,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Legend,
+  Tooltip,
+} from "chart.js";
 import "../../css/graphcss.css";
 
-defaults.global.tooltips.enabled = true;
-defaults.global.legend.position = "bottom";
-
 const SelectionChart = (props) => {
+  // Chart.defaults.font.size = 14;
+  Chart.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Legend,
+    Tooltip
+  );
   return (
     <div className="gsocChart">
       <Line
@@ -13,7 +29,7 @@ const SelectionChart = (props) => {
           labels: [
             "2005",
             "2006",
-            "2006",
+            "2007",
             "2008",
             "2009",
             "2010",
@@ -45,18 +61,24 @@ const SelectionChart = (props) => {
         }}
         options={{
           maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: "bottom",
+              maxHeight: "50",
+            },
+            tooltip: {
+              enabled: true,
+            },
+          },
           scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
-                },
-              },
-            ],
+            y: {
+              beginAtZero: true,
+            },
           },
           legend: {
             labels: {
-              fontSize: props.font,
+              font: { size: props.font },
             },
           },
         }}
