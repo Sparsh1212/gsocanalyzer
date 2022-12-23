@@ -44,7 +44,7 @@ You can reset all your bookmarks by clicking the Reset Bookmarks button, which i
 
 - Clone the repo
 - cd into the repo directory
-- Run: `npm install`
+- Run: `npm install --force`
 - Run: `npm start`
 
 # Contributing :
@@ -60,7 +60,7 @@ You can reset all your bookmarks by clicking the Reset Bookmarks button, which i
 - In `./scrape.py` replace 2023 with the {year}+1
 - Run: `python scrape.py`
 - Replace the data in ./data/finalData.json with the new data in ./data.json(produced after successfully running scrape script)
-- Identify duplicate entries of organizations in data obtained through scraping (produced due to slightly different name in various year of gsoc)
-- for each duplicate org Run : `python merge.py`
+- Identify duplicate entries of organisations in data obtained through scraping (produced due to slightly different name in various year of gsoc)
+- for each duplicate organisation Run : `python merge.py`
 - add {year} to labels in `./components/OrganisationCard.js`
-- for charts in `./components/launcher/` add {year} to the labels and add the data for the year
+- for charts in `./components/launcher/` add {year} to the labels and add data for the year

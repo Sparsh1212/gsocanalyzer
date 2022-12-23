@@ -90,6 +90,11 @@ const OrganisationCard = ({ key, orgData, bookmarked, setBookmarked }) => {
               height={isMobile ? 300 : 250}
               options={{
                 maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    position: "bottom",
+                  },
+                },
                 scales: {
                   y: {
                     ticks: {
