@@ -13,7 +13,7 @@ import {
 import "../../css/graphcss.css";
 
 const SelectionChart = (props) => {
-  // Chart.defaults.font.size = 14;
+  Chart.defaults.font.size = props.font;
   Chart.register(
     CategoryScale,
     LinearScale,
@@ -74,11 +74,19 @@ const SelectionChart = (props) => {
           scales: {
             y: {
               beginAtZero: true,
+              ticks: {
+                font: {
+                  size: 12,
+                },
+              },
             },
-          },
-          legend: {
-            labels: {
-              font: { size: props.font },
+            x: {
+              beginAtZero: true,
+              ticks: {
+                font: {
+                  size: 12,
+                },
+              },
             },
           },
         }}

@@ -15,7 +15,7 @@ import "../../css/graphcss.css";
 // Chart.defaults.plugins.legend.position = "bottom";
 
 const ParticipantChart = (props) => {
-  // Chart.defaults.font.size = props.font;
+  Chart.defaults.font.size = props.font;
   Chart.register(CategoryScale, BarElement, PointElement, Legend, Tooltip);
   return (
     <div className="gsocChart">
@@ -78,6 +78,19 @@ const ParticipantChart = (props) => {
           scales: {
             y: {
               beginAtZero: true,
+              ticks: {
+                font: {
+                  size: 12,
+                },
+              },
+            },
+            x: {
+              beginAtZero: true,
+              ticks: {
+                font: {
+                  size: 12,
+                },
+              },
             },
           },
           legend: {

@@ -16,7 +16,7 @@ import "../../css/graphcss.css";
 // Chart.defaults.plugins.legend.position = "bottom";
 
 const OrganizationChart = (props) => {
-  // Chart.defaults.font.size = props.font;
+  Chart.defaults.font.size = props.font;
   Chart.register(
     CategoryScale,
     BarElement,
@@ -78,17 +78,20 @@ const OrganizationChart = (props) => {
               beginAtZero: true,
               ticks: {
                 font: {
-                  size: 14,
+                  size: 12,
+                },
+              },
+            },
+            x: {
+              beginAtZero: true,
+              ticks: {
+                font: {
+                  size: 12,
                 },
               },
             },
           },
           indexAxis: "y",
-          legend: {
-            title: {
-              font: { size: 50, weight: "bold" },
-            },
-          },
         }}
       />
     </div>
