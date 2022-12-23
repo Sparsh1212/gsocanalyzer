@@ -6,17 +6,20 @@ GSoC: Google Summer of Code; 'Oscar of the Coding World', as they popularly call
 
 ## Link to website: https://sparsh1212.github.io/gsocanalyzer/
 
-
 ### Home Page
+
 ![1](./readme-assets/homePage.png)
 
 ### Search by organisation name
+
 ![1](./readme-assets/searchByOrganisation.png)
 
 ### Search by tech-stack
+
 ![1](./readme-assets/searchByTechStack.png)
 
-## Bookmark 
+## Bookmark
+
 ### Bookmarking feature allows you to save your favorite organisation and then quickly access them in the browser.
 
 Steps to bookmark an organization.
@@ -37,9 +40,8 @@ You can reset all your bookmarks by clicking the Reset Bookmarks button, which i
 
 ![1](./readme-assets/resetBookmark.png)
 
-
-
 # Setup:
+
 - Clone the repo
 - cd into the repo directory
 - Run: `npm install`
@@ -51,3 +53,14 @@ You can reset all your bookmarks by clicking the Reset Bookmarks button, which i
 - Create a new branch named <your_feature>
 - Commit changes and make a PR.
 - PRs are welcome.
+
+# Updating Data:
+
+- Setup gsoc analyzer using the steps mentioned above
+- In `./scrape.py` replace 2023 with the {year}+1
+- Run: `python scrape.py`
+- Replace the data in ./data/finalData.json with the new data in ./data.json(produced after successfully running scrape script)
+- Identify duplicate entries of organizations in data obtained through scraping (produced due to slightly different name in various year of gsoc)
+- for each duplicate org Run : `python merge.py`
+- add {year} to labels in `./components/OrganisationCard.js`
+- for charts in `./components/launcher/` add {year} to the labels and add the data for the year

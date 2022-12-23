@@ -91,13 +91,22 @@ const OrganisationCard = ({ key, orgData, bookmarked, setBookmarked }) => {
               options={{
                 maintainAspectRatio: false,
                 scales: {
-                  yAxes: [
-                    {
-                      ticks: {
-                        precision: 0,
+                  y: {
+                    ticks: {
+                      precision: 0,
+                      font: {
+                        size: 12,
                       },
                     },
-                  ],
+                  },
+                  x: {
+                    ticks: {
+                      precision: 0,
+                      font: {
+                        size: 12,
+                      },
+                    },
+                  },
                 },
               }}
             />

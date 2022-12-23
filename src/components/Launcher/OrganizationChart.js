@@ -12,9 +12,6 @@ import {
 } from "chart.js";
 import "../../css/graphcss.css";
 
-// Chart.defaults.plugins.tooltip.enabled = true;
-// Chart.defaults.plugins.legend.position = "bottom";
-
 const OrganizationChart = (props) => {
   Chart.defaults.font.size = props.font;
   Chart.register(

@@ -10,10 +10,6 @@ import {
   Tooltip,
 } from "chart.js";
 import "../../css/graphcss.css";
-// Chart.defaults.plugins.tooltip.enabled = true;
-// // console.log(defaults.plugins.legend.position);
-// Chart.defaults.plugins.legend.position = "bottom";
-
 const ParticipantChart = (props) => {
   Chart.defaults.font.size = props.font;
   Chart.register(CategoryScale, BarElement, PointElement, Legend, Tooltip);
